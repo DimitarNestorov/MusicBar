@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="ZfR-dL-x8Q" customClass="GlobalState"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
+            <connections>
+                <outlet property="globalState" destination="ZfR-dL-x8Q" id="cWc-kN-tge"/>
+                <outlet property="popover" destination="aEJ-jB-CXY" id="qxB-hD-m8q"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <viewController id="wJc-5T-Kn7" userLabel="Popover View Controller" customClass="PopoverViewController">
+            <connections>
+                <outlet property="albumArtwork" destination="2aU-7j-03V" id="kHN-4z-DLY"/>
+                <outlet property="durationRemainingTimeLabel" destination="NYb-RB-Bpm" id="jpA-Rg-Juz"/>
+                <outlet property="elapsedTimeLabel" destination="B4m-M8-pXJ" id="GB2-LL-sht"/>
+                <outlet property="globalState" destination="ZfR-dL-x8Q" id="eRJ-ZD-p73"/>
+                <outlet property="maskedAlbumArtwork" destination="WIu-ft-cKy" id="YkY-dc-bpO"/>
+                <outlet property="playPauseButton" destination="Lrb-RT-9iW" id="C30-jI-qgw"/>
+                <outlet property="popover" destination="aEJ-jB-CXY" id="eX5-SH-5hF"/>
+                <outlet property="seekContainer" destination="b2E-Qh-GKS" id="RJ3-jT-v6u"/>
+                <outlet property="view" destination="r53-rw-OaE" id="3yI-Hw-Bxn"/>
+            </connections>
+        </viewController>
+        <popover appearance="HUD" behavior="t" id="aEJ-jB-CXY">
+            <connections>
+                <outlet property="contentViewController" destination="wJc-5T-Kn7" id="eUX-el-lVe"/>
+                <outlet property="delegate" destination="wJc-5T-Kn7" id="Nez-OV-7P9"/>
+            </connections>
+        </popover>
+        <customView wantsLayer="YES" id="r53-rw-OaE">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2aU-7j-03V" userLabel="Album Artwork View">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <subviews>
+                        <visualEffectView wantsLayer="YES" appearanceType="vibrantDark" alphaValue="0.0" blendingMode="withinWindow" material="dark" state="active" translatesAutoresizingMaskIntoConstraints="NO" id="Djp-Di-l29" customClass="ControlsView">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <subviews>
+                                <customView wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WIu-ft-cKy" userLabel="Inner Artwork View">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                </customView>
+                                <customView wantsLayer="YES" alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="b2E-Qh-GKS" userLabel="Seek Container">
+                                    <rect key="frame" x="8" y="50" width="284" height="4"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="4" id="MCS-zJ-Hwb"/>
+                                    </constraints>
+                                </customView>
+                                <button alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-RT-9iW" userLabel="Play/Pause" customClass="Button">
+                                    <rect key="frame" x="135" y="10" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="30" id="RwO-B1-KkV"/>
+                                        <constraint firstAttribute="height" constant="30" id="Xyd-Dc-J6E"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Play" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="UTC-gr-IoW">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="playPauseAction:" target="wJc-5T-Kn7" id="v6T-Tc-gey"/>
+                                    </connections>
+                                </button>
+                                <button alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="Ieq-bg-6rR" userLabel="Previous" customClass="Button">
+                                    <rect key="frame" x="95" y="10" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="GMh-cL-K1W"/>
+                                        <constraint firstAttribute="width" constant="30" id="zgy-QK-mkV"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Previous" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="R0i-hx-Zrc">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="previousAction:" target="wJc-5T-Kn7" id="CM0-LT-0tq"/>
+                                    </connections>
+                                </button>
+                                <button alphaValue="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-ZC-VZ4" userLabel="Next" customClass="Button">
+                                    <rect key="frame" x="175" y="10" width="30" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="nJf-em-6QX"/>
+                                        <constraint firstAttribute="width" constant="30" id="vrx-u8-11c"/>
+                                    </constraints>
+                                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Next" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="mmq-Gq-bpZ">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="nextAction:" target="wJc-5T-Kn7" id="OPL-6X-55h"/>
+                                    </connections>
+                                </button>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" alphaValue="0.5" id="B4m-M8-pXJ" userLabel="Elapsed Time">
+                                    <rect key="frame" x="6" y="26" width="60" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" title="0:00" id="KHq-UU-lDb">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" alphaValue="0.5" id="NYb-RB-Bpm" userLabel="Duration/Remaining Time">
+                                    <rect key="frame" x="234" y="26" width="60" height="16"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="0:00" id="cEd-BX-aNj">
+                                        <font key="font" metaFont="menu" size="11"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Ieq-bg-6rR" secondAttribute="bottom" constant="10" id="1bE-ag-Cke"/>
+                                <constraint firstAttribute="trailing" secondItem="b2E-Qh-GKS" secondAttribute="trailing" constant="8" id="2Sn-JJ-CFV"/>
+                                <constraint firstItem="NYb-RB-Bpm" firstAttribute="trailing" secondItem="b2E-Qh-GKS" secondAttribute="trailing" id="P5L-ab-ELU"/>
+                                <constraint firstAttribute="height" constant="300" id="S7F-Eg-dUK"/>
+                                <constraint firstItem="NYb-RB-Bpm" firstAttribute="leading" secondItem="cVL-ZC-VZ4" secondAttribute="trailing" constant="31" id="SjU-g4-v3P"/>
+                                <constraint firstItem="Ieq-bg-6rR" firstAttribute="leading" secondItem="B4m-M8-pXJ" secondAttribute="trailing" constant="31" id="UGP-a8-iGK"/>
+                                <constraint firstItem="b2E-Qh-GKS" firstAttribute="leading" secondItem="Djp-Di-l29" secondAttribute="leading" constant="8" id="ai9-uF-Qyg"/>
+                                <constraint firstAttribute="bottom" secondItem="cVL-ZC-VZ4" secondAttribute="bottom" constant="10" id="iZu-HH-9a4"/>
+                                <constraint firstAttribute="bottom" secondItem="Lrb-RT-9iW" secondAttribute="bottom" constant="10" id="qZY-NP-SJ1"/>
+                                <constraint firstItem="cVL-ZC-VZ4" firstAttribute="leading" secondItem="Lrb-RT-9iW" secondAttribute="trailing" constant="10" id="ryY-AB-Cqg"/>
+                                <constraint firstItem="Lrb-RT-9iW" firstAttribute="top" secondItem="b2E-Qh-GKS" secondAttribute="bottom" constant="10" id="wZX-OX-d23"/>
+                                <constraint firstItem="B4m-M8-pXJ" firstAttribute="leading" secondItem="b2E-Qh-GKS" secondAttribute="leading" id="x7q-gi-Nts"/>
+                                <constraint firstItem="Lrb-RT-9iW" firstAttribute="leading" secondItem="Ieq-bg-6rR" secondAttribute="trailing" constant="10" id="yBE-rP-vhi"/>
+                                <constraint firstAttribute="width" constant="300" id="zrV-Bp-e4g"/>
+                            </constraints>
+                        </visualEffectView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Djp-Di-l29" firstAttribute="leading" secondItem="2aU-7j-03V" secondAttribute="leading" id="O1C-Zg-4lA"/>
+                        <constraint firstAttribute="bottom" secondItem="Djp-Di-l29" secondAttribute="bottom" id="Wfk-1t-FD2"/>
+                        <constraint firstAttribute="trailing" secondItem="Djp-Di-l29" secondAttribute="trailing" id="ahJ-ys-aur"/>
+                        <constraint firstItem="Djp-Di-l29" firstAttribute="top" secondItem="2aU-7j-03V" secondAttribute="top" id="xcF-Xq-VfC"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="2aU-7j-03V" secondAttribute="trailing" id="jjS-6z-05L"/>
+                <constraint firstItem="2aU-7j-03V" firstAttribute="leading" secondItem="r53-rw-OaE" secondAttribute="leading" id="lbe-lC-Wsk"/>
+                <constraint firstItem="2aU-7j-03V" firstAttribute="top" secondItem="r53-rw-OaE" secondAttribute="top" id="qqU-od-Qtl"/>
+                <constraint firstAttribute="bottom" secondItem="2aU-7j-03V" secondAttribute="bottom" id="r2l-0l-Ejz"/>
+            </constraints>
+            <point key="canvasLocation" x="111" y="204"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Next" width="30" height="30"/>
+        <image name="Play" width="30" height="30"/>
+        <image name="Previous" width="30" height="30"/>
+    </resources>
+</document>
