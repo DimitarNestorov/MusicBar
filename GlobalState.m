@@ -51,21 +51,21 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
             self.albumArtwork = nil;
             self.timestamp = nil;
             self.duration = nil;
-            self->_elapsedTime = nil;
+            self->_elapsedTime = 0;
         } else {
             self.artist = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtist];
             self.title = [info objectForKey:kMRMediaRemoteNowPlayingInfoTitle];
             self.albumArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
             self.timestamp = [info objectForKey:kMRMediaRemoteNowPlayingInfoTimestamp];
             self.duration = [info objectForKey:kMRMediaRemoteNowPlayingInfoDuration];
-            self->_elapsedTime = [info objectForKey:kMRMediaRemoteNowPlayingInfoElapsedTime];
+            self->_elapsedTime = [[info objectForKey:kMRMediaRemoteNowPlayingInfoElapsedTime] doubleValue];
         }
         
         [NSNotificationCenter.defaultCenter postNotificationName:GlobalStateNotification.infoDidChange object:nil];
     });
 }
 
-#pragma mark Notification handlers
+#pragma mark - Notification handlers
 
 - (void)isPlayingDidChange:(NSNotification *)notification {
     self.isPlaying = [[notification.userInfo objectForKey:kMRMediaRemoteNowPlayingApplicationIsPlayingUserInfoKey] boolValue];
@@ -83,7 +83,7 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
     [self getNowPlayingInfo];
 }
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (void)togglePlayPause {
     MRMediaRemoteSendCommand(MRMediaRemoteCommandTogglePlayPause, nil);
@@ -97,9 +97,9 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
     MRMediaRemoteSendCommand(MRMediaRemoteCommandNextTrack, nil);
 }
 
-- (void)setElapsedTime:(NSNumber *)elapsedTime {
+- (void)setElapsedTime:(double)elapsedTime {
     _elapsedTime = elapsedTime;
-    MRMediaRemoteSetElapsedTime(elapsedTime.doubleValue);
+    MRMediaRemoteSetElapsedTime(elapsedTime);
 }
 
 @end

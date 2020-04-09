@@ -1,5 +1,4 @@
-#import <Foundation/Foundation.h>
-
+@import Foundation;
 
 extern const struct GlobalStateNotificationStruct {
     NSString * _Nonnull infoDidChange;
@@ -16,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable) NSData *albumArtwork;
 @property (nullable) NSDate *timestamp;
 @property (nullable) NSNumber *duration;
-@property (nonatomic, nullable) NSNumber *elapsedTime;
+@property (nonatomic) double elapsedTime;
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (void)togglePlayPause;
 - (void)previous;

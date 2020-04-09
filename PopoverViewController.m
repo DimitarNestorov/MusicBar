@@ -1,4 +1,4 @@
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
 #import "PopoverViewController.h"
 
@@ -16,7 +16,7 @@
 @property (weak) IBOutlet NSView *albumArtwork;
 @property (weak) IBOutlet NSView *maskedAlbumArtwork;
 
-@property (weak) IBOutlet NSView *progressContainer;
+@property (weak) IBOutlet NSView *progressBackground;
 
 @property (weak) IBOutlet NSButton *playPauseButton;
 
@@ -35,11 +35,7 @@
 
 @implementation PopoverViewController
 
-- (void)handleTick {
-    if (self.globalState.timestamp == nil) return;
-
-    double elapsedTimeAtTimestamp = self.globalState.elapsedTime.doubleValue;
-    double elapsedTime = self.globalState.isPlaying ? elapsedTimeAtTimestamp + [NSDate.date timeIntervalSinceDate:self.globalState.timestamp] : elapsedTimeAtTimestamp;
+- (void)handleTickWithElapsedTime:(double)elapsedTime {
     self.elapsedTimeLabel.stringValue = [NSString formatSecondsWithDouble:elapsedTime];
     
     double duration = self.globalState.duration.doubleValue;
@@ -49,6 +45,15 @@
         NSString *formattedTime = [NSString formatSecondsWithDouble:duration - elapsedTime];
         self.durationRemainingTimeLabel.stringValue = [NSString stringWithFormat:@"-%@", formattedTime];
     }
+}
+
+- (void)handleTick {
+    if (self.globalState.timestamp == nil) return;
+
+    double elapsedTimeAtTimestamp = self.globalState.elapsedTime;
+    double elapsedTime = self.globalState.isPlaying ? elapsedTimeAtTimestamp + [NSDate.date timeIntervalSinceDate:self.globalState.timestamp] : elapsedTimeAtTimestamp;
+    
+    [self handleTickWithElapsedTime:elapsedTime];
 }
 
 - (void)updatePopover {
@@ -68,7 +73,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark View controller
+#pragma mark - View controller
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -89,8 +94,8 @@
     gradient.locations = @[@0.0, @0.2, @0.9, @1.0];
     self.maskedAlbumArtwork.layer.mask = gradient;
     
-    self.progressContainer.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.7].CGColor;
-    self.progressContainer.layer.cornerRadius = 2;
+    self.progressBackground.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.7].CGColor;
+    self.progressBackground.layer.cornerRadius = 2;
     self.progress.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.9].CGColor;
     self.thumb.layer.backgroundColor = NSColor.whiteColor.CGColor;
     self.thumb.layer.cornerRadius = 4;
@@ -101,7 +106,7 @@
     self.thumb.shadow = thumbShadow;
 }
 
-#pragma mark Notification handlers
+#pragma mark - Notification handlers
 
 - (void)stateDidChange:(NSNotification *)notification {
     if (self.popover.isShown) {
@@ -109,7 +114,7 @@
     }
 }
 
-#pragma mark Actions
+#pragma mark - Actions
 
 - (IBAction)playPauseAction:(NSButton *)sender {
     [self.globalState togglePlayPause];
@@ -134,30 +139,39 @@
     BOOL dragActive = YES;
     NSPoint location = NSZeroPoint;
     NSEvent* event = NULL;
-    NSWindow *targetWindow = self.progressContainer.window;
+    NSWindow *targetWindow = sender.window;
+    double elapsedTime = 0;
+    double duration = self.globalState.duration.doubleValue;
+    CGFloat width = sender.bounds.size.width;
+    double newConstant = 0;
     
-    while (dragActive) {
-        event = [targetWindow nextEventMatchingMask:(NSEventMaskLeftMouseDragged | NSEventMaskLeftMouseUp)
-                                          untilDate:[NSDate distantFuture]
-                                             inMode:NSEventTrackingRunLoopMode
-                                            dequeue:YES];
-        if (!event) continue;
-        location = [self.progressContainer convertPoint:event.locationInWindow fromView:nil];
-        switch (event.type) {
-            case NSEventTypeLeftMouseUp:
-                dragActive = NO;
-            case NSEventTypeLeftMouseDragged:
-                self.progressWidthConstraint.constant = location.x;
-                break;
-            default:
-                break;
+    @autoreleasepool {
+        while (dragActive) {
+            event = [targetWindow nextEventMatchingMask:(NSEventMaskLeftMouseDragged | NSEventMaskLeftMouseUp)
+                                              untilDate:[NSDate distantFuture]
+                                                 inMode:NSEventTrackingRunLoopMode
+                                                dequeue:YES];
+            if (!event) continue;
+            location = [sender convertPoint:event.locationInWindow fromView:nil];
+            switch (event.type) {
+                case NSEventTypeLeftMouseUp:
+                    dragActive = NO;
+                case NSEventTypeLeftMouseDragged:
+                    newConstant = MIN(MAX(location.x, 0), width);
+                    self.progressWidthConstraint.constant = newConstant;
+                    elapsedTime = (newConstant / width) * duration;
+                    [self handleTickWithElapsedTime:elapsedTime];
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
-    self.globalState.elapsedTime = [NSNumber numberWithDouble:(self.progressWidthConstraint.constant / self.progressContainer.bounds.size.width) * self.globalState.duration.doubleValue];
+    self.globalState.elapsedTime = elapsedTime;
 }
 
-#pragma mark Popover delegate
+#pragma mark - Popover delegate
 
 - (void)popoverWillShow:(NSNotification *)notification {
     [self updatePopover];

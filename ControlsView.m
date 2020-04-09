@@ -1,4 +1,4 @@
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
 #import "ControlsView.h"
 

@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 #ifndef MediaRemote_h
 #define MediaRemote_h

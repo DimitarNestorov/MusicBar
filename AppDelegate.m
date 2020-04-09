@@ -39,7 +39,7 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark Notification handlers
+#pragma mark - Notification handlers
 
 - (void)infoDidChange:(NSNotification *)notification {
     if (self.globalState.artist == nil) {

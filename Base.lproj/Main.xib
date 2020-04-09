@@ -31,7 +31,7 @@
                 <outlet property="playPauseButton" destination="Lrb-RT-9iW" id="C30-jI-qgw"/>
                 <outlet property="popover" destination="aEJ-jB-CXY" id="eX5-SH-5hF"/>
                 <outlet property="progress" destination="VvF-Ga-Hmb" id="WCd-73-ZrV"/>
-                <outlet property="progressContainer" destination="b2E-Qh-GKS" id="RJ3-jT-v6u"/>
+                <outlet property="progressBackground" destination="p4g-pp-Rrw" id="bkp-0X-E0U"/>
                 <outlet property="progressWidthConstraint" destination="NP3-S0-nwe" id="8Xe-ig-jhy"/>
                 <outlet property="thumb" destination="AFL-SP-q48" id="x8h-CT-kgk"/>
                 <outlet property="view" destination="r53-rw-OaE" id="3yI-Hw-Bxn"/>
@@ -57,20 +57,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                 </customView>
                                 <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2E-Qh-GKS" userLabel="Progress Container" customClass="ProgressContainerView">
-                                    <rect key="frame" x="8" y="50" width="284" height="4"/>
+                                    <rect key="frame" x="8" y="42" width="284" height="20"/>
                                     <subviews>
-                                        <customView wantsLayer="YES" alphaValue="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="VvF-Ga-Hmb" userLabel="Progress">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="4"/>
+                                        <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4g-pp-Rrw" userLabel="Progress Background">
+                                            <rect key="frame" x="0.0" y="8" width="284" height="4"/>
+                                            <subviews>
+                                                <customView wantsLayer="YES" alphaValue="0.90000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="VvF-Ga-Hmb" userLabel="Progress">
+                                                    <rect key="frame" x="0.0" y="-6" width="100" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" identifier="$ProgressWidth$" id="NP3-S0-nwe"/>
+                                                    </constraints>
+                                                </customView>
+                                            </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" identifier="$ProgressWidth$" id="NP3-S0-nwe"/>
+                                                <constraint firstItem="VvF-Ga-Hmb" firstAttribute="leading" secondItem="p4g-pp-Rrw" secondAttribute="leading" id="OUP-qH-ELt"/>
+                                                <constraint firstAttribute="height" constant="4" id="Wc1-3q-pqm"/>
+                                                <constraint firstItem="VvF-Ga-Hmb" firstAttribute="centerY" secondItem="p4g-pp-Rrw" secondAttribute="centerY" id="aTk-fe-65z"/>
+                                                <constraint firstItem="VvF-Ga-Hmb" firstAttribute="height" secondItem="p4g-pp-Rrw" secondAttribute="height" multiplier="4" id="nzR-jY-dZE"/>
                                             </constraints>
                                         </customView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="4" identifier="$ProgressContainerHeight$" id="MCS-zJ-Hwb"/>
-                                        <constraint firstItem="VvF-Ga-Hmb" firstAttribute="height" secondItem="b2E-Qh-GKS" secondAttribute="height" identifier="$ProgressHeightEqualProgressContainerHeight$" id="TEN-en-HRk"/>
-                                        <constraint firstItem="VvF-Ga-Hmb" firstAttribute="leading" secondItem="b2E-Qh-GKS" secondAttribute="leading" identifier="$ProgressLeadingEqualProgressContainerLeading$" id="XnJ-Kp-H4y"/>
-                                        <constraint firstItem="VvF-Ga-Hmb" firstAttribute="top" secondItem="b2E-Qh-GKS" secondAttribute="top" identifier="$ProgressTopEqualProgressContainerTop$" id="vxD-Y1-fk9"/>
+                                        <constraint firstItem="p4g-pp-Rrw" firstAttribute="width" secondItem="b2E-Qh-GKS" secondAttribute="width" id="15T-NH-dn1"/>
+                                        <constraint firstAttribute="height" constant="20" identifier="$ProgressContainerHeight$" id="MCS-zJ-Hwb"/>
+                                        <constraint firstItem="p4g-pp-Rrw" firstAttribute="leading" secondItem="b2E-Qh-GKS" secondAttribute="leading" id="e8y-ve-x2U"/>
+                                        <constraint firstItem="p4g-pp-Rrw" firstAttribute="centerY" secondItem="b2E-Qh-GKS" secondAttribute="centerY" id="iet-b1-Qqb"/>
                                     </constraints>
                                     <connections>
                                         <action selector="progressContainerAction:" target="wJc-5T-Kn7" id="jQY-2W-X9r"/>
@@ -129,7 +140,7 @@
                                     <rect key="frame" x="6" y="26" width="60" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="0:00" id="KHq-UU-lDb">
-                                        <font key="font" metaFont="label" size="11"/>
+                                        <font key="font" metaFont="menu" size="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -145,7 +156,7 @@
                                         </clickGestureRecognizer>
                                     </gestureRecognizers>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="0:00" id="cEd-BX-aNj">
-                                        <font key="font" metaFont="label" size="11"/>
+                                        <font key="font" metaFont="menu" size="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -154,7 +165,7 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Ieq-bg-6rR" secondAttribute="bottom" constant="10" id="1bE-ag-Cke"/>
                                 <constraint firstAttribute="trailing" secondItem="b2E-Qh-GKS" secondAttribute="trailing" constant="8" id="2Sn-JJ-CFV"/>
-                                <constraint firstItem="AFL-SP-q48" firstAttribute="centerY" secondItem="VvF-Ga-Hmb" secondAttribute="centerY" identifier="$ThumbCenterYEqualProgressCenterY$" id="9ST-d4-eG2"/>
+                                <constraint firstItem="AFL-SP-q48" firstAttribute="centerY" secondItem="VvF-Ga-Hmb" secondAttribute="centerY" id="3DM-rw-FuV"/>
                                 <constraint firstAttribute="bottom" secondItem="WIu-ft-cKy" secondAttribute="bottom" id="Job-Dd-Gch"/>
                                 <constraint firstItem="NYb-RB-Bpm" firstAttribute="trailing" secondItem="b2E-Qh-GKS" secondAttribute="trailing" id="P5L-ab-ELU"/>
                                 <constraint firstAttribute="height" constant="300" id="S7F-Eg-dUK"/>
@@ -166,11 +177,11 @@
                                 <constraint firstAttribute="bottom" secondItem="cVL-ZC-VZ4" secondAttribute="bottom" constant="10" id="iZu-HH-9a4"/>
                                 <constraint firstAttribute="bottom" secondItem="Lrb-RT-9iW" secondAttribute="bottom" constant="10" id="qZY-NP-SJ1"/>
                                 <constraint firstItem="cVL-ZC-VZ4" firstAttribute="leading" secondItem="Lrb-RT-9iW" secondAttribute="trailing" constant="10" id="ryY-AB-Cqg"/>
-                                <constraint firstItem="Lrb-RT-9iW" firstAttribute="top" secondItem="b2E-Qh-GKS" secondAttribute="bottom" constant="10" id="wZX-OX-d23"/>
+                                <constraint firstItem="AFL-SP-q48" firstAttribute="trailing" secondItem="VvF-Ga-Hmb" secondAttribute="trailing" constant="4" id="sl7-Oj-ZJp"/>
+                                <constraint firstItem="Lrb-RT-9iW" firstAttribute="top" secondItem="b2E-Qh-GKS" secondAttribute="bottom" constant="2" id="wZX-OX-d23"/>
                                 <constraint firstItem="WIu-ft-cKy" firstAttribute="centerX" secondItem="Lrb-RT-9iW" secondAttribute="centerX" id="wfu-SU-0kK"/>
                                 <constraint firstItem="B4m-M8-pXJ" firstAttribute="leading" secondItem="b2E-Qh-GKS" secondAttribute="leading" id="x7q-gi-Nts"/>
                                 <constraint firstItem="Lrb-RT-9iW" firstAttribute="leading" secondItem="Ieq-bg-6rR" secondAttribute="trailing" constant="10" id="yBE-rP-vhi"/>
-                                <constraint firstItem="AFL-SP-q48" firstAttribute="trailing" secondItem="VvF-Ga-Hmb" secondAttribute="trailing" constant="4" identifier="$ThumbTralingEqualProgressTrailing$" id="zbA-ms-1D8"/>
                                 <constraint firstAttribute="width" constant="300" id="zrV-Bp-e4g"/>
                             </constraints>
                         </visualEffectView>
