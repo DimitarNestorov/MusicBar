@@ -51,14 +51,14 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
             self.albumArtwork = nil;
             self.timestamp = nil;
             self.duration = nil;
-            self.elapsedTime = nil;
+            self->_elapsedTime = nil;
         } else {
             self.artist = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtist];
             self.title = [info objectForKey:kMRMediaRemoteNowPlayingInfoTitle];
             self.albumArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
             self.timestamp = [info objectForKey:kMRMediaRemoteNowPlayingInfoTimestamp];
             self.duration = [info objectForKey:kMRMediaRemoteNowPlayingInfoDuration];
-            self.elapsedTime = [info objectForKey:kMRMediaRemoteNowPlayingInfoElapsedTime];
+            self->_elapsedTime = [info objectForKey:kMRMediaRemoteNowPlayingInfoElapsedTime];
         }
         
         [NSNotificationCenter.defaultCenter postNotificationName:GlobalStateNotification.infoDidChange object:nil];
@@ -95,6 +95,11 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
 
 - (void)next {
     MRMediaRemoteSendCommand(MRMediaRemoteCommandNextTrack, nil);
+}
+
+- (void)setElapsedTime:(NSNumber *)elapsedTime {
+    _elapsedTime = elapsedTime;
+    MRMediaRemoteSetElapsedTime(elapsedTime.doubleValue);
 }
 
 @end

@@ -16,12 +16,16 @@
 @property (weak) IBOutlet NSView *albumArtwork;
 @property (weak) IBOutlet NSView *maskedAlbumArtwork;
 
-@property (weak) IBOutlet NSView *seekContainer;
+@property (weak) IBOutlet NSView *progressContainer;
 
 @property (weak) IBOutlet NSButton *playPauseButton;
 
 @property (weak) IBOutlet NSTextField *elapsedTimeLabel;
 @property (weak) IBOutlet NSTextField *durationRemainingTimeLabel;
+
+@property (weak) IBOutlet NSView *progress;
+@property (weak) IBOutlet NSLayoutConstraint *progressWidthConstraint;
+@property (weak) IBOutlet NSView *thumb;
 
 @property NSTimer *timer;
 
@@ -32,17 +36,19 @@
 @implementation PopoverViewController
 
 - (void)handleTick {
-    if (self.globalState.timestamp != nil) {
-        double elapsedTimeAtTimestamp = self.globalState.elapsedTime.doubleValue;
-        double elapsedTime = self.globalState.isPlaying ? elapsedTimeAtTimestamp + [NSDate.date timeIntervalSinceDate:self.globalState.timestamp] : elapsedTimeAtTimestamp;
-        self.elapsedTimeLabel.stringValue = [NSString formatSecondsWithDouble:elapsedTime];
+    if (self.globalState.timestamp == nil) return;
 
-        if (self.showRemainingTime) {
-            NSString *formattedTime = [NSString formatSecondsWithDouble:self.globalState.duration.doubleValue - elapsedTime];
-            self.durationRemainingTimeLabel.stringValue = [NSString stringWithFormat:@"-%@", formattedTime];
-        }
-    }
+    double elapsedTimeAtTimestamp = self.globalState.elapsedTime.doubleValue;
+    double elapsedTime = self.globalState.isPlaying ? elapsedTimeAtTimestamp + [NSDate.date timeIntervalSinceDate:self.globalState.timestamp] : elapsedTimeAtTimestamp;
+    self.elapsedTimeLabel.stringValue = [NSString formatSecondsWithDouble:elapsedTime];
     
+    double duration = self.globalState.duration.doubleValue;
+    self.progressWidthConstraint.constant = self.progress.superview.bounds.size.width * (elapsedTime / duration);
+
+    if (self.showRemainingTime) {
+        NSString *formattedTime = [NSString formatSecondsWithDouble:duration - elapsedTime];
+        self.durationRemainingTimeLabel.stringValue = [NSString stringWithFormat:@"-%@", formattedTime];
+    }
 }
 
 - (void)updatePopover {
@@ -83,11 +89,16 @@
     gradient.locations = @[@0.0, @0.2, @0.9, @1.0];
     self.maskedAlbumArtwork.layer.mask = gradient;
     
-    self.seekContainer.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.7].CGColor;
-    self.seekContainer.layer.cornerRadius = 2;
-    
-    NSClickGestureRecognizer *click = [[NSClickGestureRecognizer alloc] initWithTarget:self action:@selector(clickGestureRecognizerAction)];
-    [self.durationRemainingTimeLabel addGestureRecognizer:click];
+    self.progressContainer.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.7].CGColor;
+    self.progressContainer.layer.cornerRadius = 2;
+    self.progress.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.9].CGColor;
+    self.thumb.layer.backgroundColor = NSColor.whiteColor.CGColor;
+    self.thumb.layer.cornerRadius = 4;
+    NSShadow *thumbShadow = [[NSShadow alloc] init];
+    thumbShadow.shadowOffset = NSMakeSize(0, -2);
+    thumbShadow.shadowColor = [NSColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    thumbShadow.shadowBlurRadius = 2.0;
+    self.thumb.shadow = thumbShadow;
 }
 
 #pragma mark Notification handlers
@@ -112,11 +123,38 @@
     [self.globalState next];
 }
 
-- (void)clickGestureRecognizerAction {
+- (IBAction)durationRemainingTimeClickGestureRecognizerAction:(NSClickGestureRecognizer *)sender {
     self.showRemainingTime = !self.showRemainingTime;
     [NSUserDefaults.standardUserDefaults setBool:self.showRemainingTime forKey:@"showRemainingTime"];
     
     [self updatePopover];
+}
+
+- (IBAction)progressContainerAction:(NSControl *)sender {
+    BOOL dragActive = YES;
+    NSPoint location = NSZeroPoint;
+    NSEvent* event = NULL;
+    NSWindow *targetWindow = self.progressContainer.window;
+    
+    while (dragActive) {
+        event = [targetWindow nextEventMatchingMask:(NSEventMaskLeftMouseDragged | NSEventMaskLeftMouseUp)
+                                          untilDate:[NSDate distantFuture]
+                                             inMode:NSEventTrackingRunLoopMode
+                                            dequeue:YES];
+        if (!event) continue;
+        location = [self.progressContainer convertPoint:event.locationInWindow fromView:nil];
+        switch (event.type) {
+            case NSEventTypeLeftMouseUp:
+                dragActive = NO;
+            case NSEventTypeLeftMouseDragged:
+                self.progressWidthConstraint.constant = location.x;
+                break;
+            default:
+                break;
+        }
+    }
+
+    self.globalState.elapsedTime = [NSNumber numberWithDouble:(self.progressWidthConstraint.constant / self.progressContainer.bounds.size.width) * self.globalState.duration.doubleValue];
 }
 
 #pragma mark Popover delegate

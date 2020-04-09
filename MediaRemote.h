@@ -18,6 +18,7 @@ void MRMediaRemoteGetNowPlayingApplicationIsPlaying(dispatch_queue_t queue,
     MRMediaRemoteGetNowPlayingApplicationIsPlayingBlock block);
 NSString *MRNowPlayingClientGetBundleIdentifier(id clientObj);
 NSString *MRNowPlayingClientGetParentAppBundleIdentifier(id clientObj);
+void MRMediaRemoteSetElapsedTime(double time);
 
 
 extern NSString *kMRMediaRemoteNowPlayingInfoDidChangeNotification;

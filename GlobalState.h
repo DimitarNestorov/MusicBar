@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable) NSData *albumArtwork;
 @property (nullable) NSDate *timestamp;
 @property (nullable) NSNumber *duration;
-@property (nullable) NSNumber *elapsedTime;
+@property (nonatomic, nullable) NSNumber *elapsedTime;
 
 #pragma mark Actions
 

@@ -43,7 +43,7 @@
         
         [newImage lockFocus];
         
-        [[NSColor windowBackgroundColor] setFill];
+        [NSColor.windowBackgroundColor setFill];
         [NSBezierPath fillRect:NSMakeRect(0, 0, targetSize.width, targetSize.height)];
         
         NSRect thumbnailRect;
