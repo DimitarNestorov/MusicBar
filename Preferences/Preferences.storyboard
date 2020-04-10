@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="wnN-yC-qI9">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Window Controller-->
+        <scene sceneID="6AD-I4-gAi">
+            <objects>
+                <windowController id="wnN-yC-qI9" sceneMemberID="viewController">
+                    <window key="window" title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Xe4-hb-Hqf">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="294" y="313" width="480" height="150"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+                        <connections>
+                            <outlet property="delegate" destination="wnN-yC-qI9" id="om6-31-i0S"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="Il2-2x-b5S" kind="relationship" relationship="window.shadowedContentViewController" id="4jP-Nj-sOR"/>
+                    </connections>
+                </windowController>
+                <customObject id="Pft-KM-6ey" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="45"/>
+        </scene>
+        <!--Preferences Tab View Controller-->
+        <scene sceneID="coX-yp-Nez">
+            <objects>
+                <tabViewController tabStyle="toolbar" id="Il2-2x-b5S" customClass="PreferencesTabViewController" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem label="General" identifier="" image="NSPreferencesGeneral" id="OKl-pm-Xzf"/>
+                        <tabViewItem label="About" identifier="" image="NSInfo" id="OQI-xC-6J9"/>
+                    </tabViewItems>
+                    <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
+                    <tabView key="tabView" type="noTabsNoBorder" id="gba-RS-o9Q">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="system"/>
+                        <connections>
+                            <outlet property="delegate" destination="Il2-2x-b5S" id="CMX-U3-ChF"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="gba-RS-o9Q" id="PeJ-IG-FNH"/>
+                        <segue destination="aoq-ld-YGy" kind="relationship" relationship="tabItems" id="RB8-NQ-2Cj"/>
+                        <segue destination="hOf-4p-afm" kind="relationship" relationship="tabItems" id="G6C-pc-lvA"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="wpq-eU-sxz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="480" y="36"/>
+        </scene>
+        <!--General-->
+        <scene sceneID="qPF-Zc-i4M">
+            <objects>
+                <viewController title="General" id="aoq-ld-YGy" customClass="PreferencesSingleTabViewController" sceneMemberID="viewController">
+                    <view key="view" id="sGq-Ys-dyr">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="165"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="3ao-cZ-0sd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="-198.5"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="dTd-S2-nyS">
+            <objects>
+                <viewController title="About" id="hOf-4p-afm" customClass="PreferencesSingleTabViewController" sceneMemberID="viewController">
+                    <view key="view" id="vlY-ii-vk1">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="134"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sj-pA-3QQ">
+                                <rect key="frame" x="20" y="44" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="11O-pL-hbL"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Usc-ep-6ra">
+                                <rect key="frame" x="96" y="76" width="236" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="MusicBar" id="xFg-wY-mAz">
+                                    <font key="font" metaFont="system" size="25"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSG-AK-ts8">
+                                <rect key="frame" x="96" y="57" width="236" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0" id="f18-KQ-BEn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Rj-uI-w42">
+                                <rect key="frame" x="332" y="61" width="106" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="GitHub" bezelStyle="rounded" image="GitHub Mark Small" imagePosition="left" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xaZ-pl-120">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="githubButtonAction:" target="hOf-4p-afm" id="SN9-pD-2q7"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yj1-Jb-yPQ">
+                                <rect key="frame" x="18" y="20" width="414" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2020 Dimitar Nestorov" id="xsD-BW-Gfn">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="4th-Tk-F9c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1118" y="112"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GitHub Mark Small" width="33" height="32"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+        <image name="NSInfo" width="32" height="32"/>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
+    </resources>
+</document>

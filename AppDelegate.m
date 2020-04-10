@@ -15,6 +15,8 @@
 @property (weak) IBOutlet NSWindow *positioningWindow;
 @property (weak) IBOutlet NSView *positioningView;
 
+@property (strong) NSWindowController *preferencesController;
+
 @end
 
 @implementation AppDelegate
@@ -41,6 +43,7 @@
 
 - (void)popoverDidClose:(NSNotification *)notification {
     self.positioningView.bounds = CGRectOffset(self.positioningView.bounds, 0, -22);
+    [self.positioningWindow orderOut:self];
 }
 
 #pragma mark - Application delegate
@@ -90,6 +93,19 @@
     } else {
         self.statusItem.title = [NSString stringWithFormat:@"%@ - %@", self.globalState.artist, self.globalState.title];
     }
+}
+
+#pragma mark - Actions
+
+- (IBAction)preferencesAction:(NSMenuItem *)sender {
+    if (self.preferencesController == nil) {
+        NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Preferences" bundle:nil];
+        self.preferencesController = [storyboard instantiateInitialController];
+    }
+    
+    [self.preferencesController showWindow:self];
+    [self.preferencesController.window makeKeyAndOrderFront:self];
+    [NSApp activateIgnoringOtherApps:YES];
 }
 
 @end

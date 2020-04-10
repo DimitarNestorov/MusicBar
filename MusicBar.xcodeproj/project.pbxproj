@@ -20,6 +20,9 @@
 		6E0423FC243D240D00E113F4 /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423FB243D240D00E113F4 /* GlobalState.m */; };
 		6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */; };
 		6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192F5243E94A100879AEE /* ProgressContainerView.m */; };
+		6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8192F92440EEAD00879AEE /* Preferences.storyboard */; };
+		6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192FF2441271200879AEE /* PreferencesTabViewController.m */; };
+		6E81930324412A5000879AEE /* PreferencesSingleTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81930224412A5000879AEE /* PreferencesSingleTabViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,11 @@
 		6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+FormatTime.mm"; sourceTree = "<group>"; };
 		6E8192F4243E94A100879AEE /* ProgressContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressContainerView.h; sourceTree = "<group>"; };
 		6E8192F5243E94A100879AEE /* ProgressContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressContainerView.m; sourceTree = "<group>"; };
+		6E8192F92440EEAD00879AEE /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		6E8192FE2441271200879AEE /* PreferencesTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesTabViewController.h; sourceTree = "<group>"; };
+		6E8192FF2441271200879AEE /* PreferencesTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTabViewController.m; sourceTree = "<group>"; };
+		6E81930124412A5000879AEE /* PreferencesSingleTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesSingleTabViewController.h; sourceTree = "<group>"; };
+		6E81930224412A5000879AEE /* PreferencesSingleTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesSingleTabViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 				6E0423E8243A437700E113F4 /* Frameworks */,
 				6E04236D2439F6AE00E113F4 /* Products */,
 				6E04241A243D449400E113F4 /* Categories */,
+				6E8192FD244126E100879AEE /* Preferences */,
 				6E0423722439F6AF00E113F4 /* Assets.xcassets */,
 				6E04237A2439F6AF00E113F4 /* app.entitlements */,
 				6E0423772439F6AF00E113F4 /* Info.plist */,
@@ -117,6 +126,18 @@
 				6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		6E8192FD244126E100879AEE /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				6E8192F92440EEAD00879AEE /* Preferences.storyboard */,
+				6E8192FE2441271200879AEE /* PreferencesTabViewController.h */,
+				6E8192FF2441271200879AEE /* PreferencesTabViewController.m */,
+				6E81930124412A5000879AEE /* PreferencesSingleTabViewController.h */,
+				6E81930224412A5000879AEE /* PreferencesSingleTabViewController.m */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */,
 				6E0423732439F6AF00E113F4 /* Assets.xcassets in Resources */,
 				6E0423762439F6AF00E113F4 /* Main.xib in Resources */,
 			);
@@ -189,12 +211,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E0423F3243B4A8E00E113F4 /* NSObject+Debounce.m in Sources */,
+				6E81930324412A5000879AEE /* PreferencesSingleTabViewController.m in Sources */,
 				6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */,
 				6E0423F6243B691700E113F4 /* NSImage+ProportionalScaling.m in Sources */,
 				6E0423C3243A37FA00E113F4 /* PopoverViewController.m in Sources */,
 				6E0423EF243B086B00E113F4 /* Button.m in Sources */,
 				6E0423BD243A1A8C00E113F4 /* ControlsView.m in Sources */,
 				6E0423792439F6AF00E113F4 /* main.m in Sources */,
+				6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */,
 				6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */,
 				6E0423712439F6AE00E113F4 /* AppDelegate.m in Sources */,
 				6E0423FC243D240D00E113F4 /* GlobalState.m in Sources */,
