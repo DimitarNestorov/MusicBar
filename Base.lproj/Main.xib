@@ -17,6 +17,7 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="globalState" destination="ZfR-dL-x8Q" id="cWc-kN-tge"/>
+                <outlet property="menu" destination="f62-Cg-yhe" id="bwY-Ii-Dpl"/>
                 <outlet property="popover" destination="aEJ-jB-CXY" id="qxB-hD-m8q"/>
                 <outlet property="positioningView" destination="vDy-cp-O2m" id="AY3-IU-fSa"/>
                 <outlet property="positioningWindow" destination="7Sq-5D-hAh" id="vmi-CX-5b0"/>
@@ -142,7 +143,7 @@
                                     <rect key="frame" x="6" y="26" width="60" height="16"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="0:00" id="KHq-UU-lDb">
-                                        <font key="font" metaFont="controlContent" size="11"/>
+                                        <font key="font" metaFont="label" size="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -158,7 +159,7 @@
                                         </clickGestureRecognizer>
                                     </gestureRecognizers>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="0:00" id="cEd-BX-aNj">
-                                        <font key="font" metaFont="controlContent" size="11"/>
+                                        <font key="font" metaFont="label" size="11"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
@@ -221,6 +222,24 @@
             </view>
             <point key="canvasLocation" x="462" y="172"/>
         </window>
+        <menu id="f62-Cg-yhe">
+            <items>
+                <menuItem title="Preferences…" id="4d9-ZT-jEh">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesAction:" target="Voe-Tx-rLC" id="noB-mk-QrK"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="hg5-YP-GQd"/>
+                <menuItem title="Quit" id="Sgr-7f-kRC">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="terminate:" target="-2" id="XWo-Dp-Iad"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="-218" y="186"/>
+        </menu>
     </objects>
     <resources>
         <image name="Next" width="30" height="30"/>

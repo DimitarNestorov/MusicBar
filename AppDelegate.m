@@ -10,6 +10,8 @@
 
 @property (weak) IBOutlet NSPopover *popover;
 
+@property (weak) IBOutlet NSMenu *menu;
+
 @property (weak) IBOutlet NSWindow *positioningWindow;
 @property (weak) IBOutlet NSView *positioningView;
 
@@ -19,6 +21,11 @@
 
 - (void)showPopover:(NSStatusBarButton *)sender {
     if (self.popover.isShown) return;
+    
+    if (NSApp.currentEvent.type == NSEventTypeRightMouseUp) {
+        [self.statusItem popUpStatusItemMenu:self.menu];
+        return;
+    }
 
     NSRect rect = [sender.window convertRectToScreen:sender.frame];
     CGFloat xOffset = CGRectGetMidX(self.positioningWindow.contentView.frame) - CGRectGetMidX(sender.frame);
@@ -50,10 +57,9 @@
                                              object:nil];
     
     self.statusItem = [NSStatusBar.systemStatusBar statusItemWithLength:NSVariableStatusItemLength];
-    self.statusItem.target = self;
-    self.statusItem.action = @selector(showPopover:);
-    self.statusItem.highlightMode = YES;
-    
+    self.statusItem.button.target = self;
+    self.statusItem.button.action = @selector(showPopover:);
+    [self.statusItem.button sendActionOn:NSEventMaskLeftMouseUp | NSEventMaskRightMouseUp];
     self.statusItem.button.image = [NSImage imageNamed:@"Note"];
     
     self.positioningWindow.opaque = YES;
