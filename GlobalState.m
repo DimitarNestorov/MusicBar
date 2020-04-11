@@ -48,6 +48,7 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
         if (info == nil) {
             self.artist = nil;
             self.title = nil;
+            self.album = nil;
             self.albumArtwork = nil;
             self.timestamp = nil;
             self.duration = nil;
@@ -55,6 +56,7 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
         } else {
             self.artist = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtist];
             self.title = [info objectForKey:kMRMediaRemoteNowPlayingInfoTitle];
+            self.album = [info objectForKey:kMRMediaRemoteNowPlayingInfoAlbum];
             self.albumArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
             self.timestamp = [info objectForKey:kMRMediaRemoteNowPlayingInfoTimestamp];
             self.duration = [info objectForKey:kMRMediaRemoteNowPlayingInfoDuration];

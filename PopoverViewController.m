@@ -94,14 +94,14 @@
     gradient.locations = @[@0.0, @0.2, @0.9, @1.0];
     self.maskedAlbumArtwork.layer.mask = gradient;
     
-    self.progressBackground.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.7].CGColor;
+    self.progressBackground.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.5].CGColor;
     self.progressBackground.layer.cornerRadius = 2;
     self.progress.layer.backgroundColor = [NSColor colorWithRed:1 green:1 blue:1 alpha:0.9].CGColor;
     self.thumb.layer.backgroundColor = NSColor.whiteColor.CGColor;
     self.thumb.layer.cornerRadius = 4;
     NSShadow *thumbShadow = [[NSShadow alloc] init];
-    thumbShadow.shadowOffset = NSMakeSize(0, -2);
-    thumbShadow.shadowColor = [NSColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    thumbShadow.shadowOffset = NSMakeSize(0, -1);
+    thumbShadow.shadowColor = [NSColor colorWithRed:0 green:0 blue:0 alpha:0.3];
     thumbShadow.shadowBlurRadius = 2.0;
     self.thumb.shadow = thumbShadow;
 }

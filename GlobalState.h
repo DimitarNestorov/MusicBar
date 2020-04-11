@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property BOOL isPlaying;
 @property (nullable) NSString *title;
 @property (nullable) NSString *artist;
+@property (nullable) NSString *album;
 @property (nullable) NSData *albumArtwork;
 @property (nullable) NSDate *timestamp;
 @property (nullable) NSNumber *duration;

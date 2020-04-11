@@ -1,15 +1,17 @@
-#import "PreferencesSingleTabViewController.h"
+#import "PreferencesTabPageViewController.h"
 
-@interface PreferencesSingleTabViewController ()
+@interface PreferencesTabPageViewController ()
 
 @end
 
-@implementation PreferencesSingleTabViewController
+@implementation PreferencesTabPageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
+    
+    
 }
 
 - (IBAction)githubButtonAction:(NSButton *)sender {
