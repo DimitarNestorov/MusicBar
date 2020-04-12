@@ -304,6 +304,9 @@
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
+                                            <connections>
+                                                <action selector="launchAtLoginCheckboxAction:" target="aoq-ld-YGy" id="3el-fd-ZDV"/>
+                                            </connections>
                                         </button>
                                     </gridCell>
                                     <gridCell row="GCM-en-QFF" column="nzm-tR-Q8n" xPlacement="fill" id="RlE-60-tdf">
@@ -349,6 +352,7 @@
                         <outlet property="hideTextWhenPausedCheckbox" destination="6XV-3z-juQ" id="Oco-JW-FA2"/>
                         <outlet property="iconPopUpButton" destination="Y5e-cP-g20" id="QU3-CV-Mp4"/>
                         <outlet property="iconWhilePlayingPopUpButton" destination="R3p-OK-iYs" id="Vlv-5P-w24"/>
+                        <outlet property="launchAtLoginCheckbox" destination="jKW-Ye-LdJ" id="6oD-8t-mcm"/>
                         <outlet property="maximumWidthSlider" destination="Thh-3K-mv9" id="uKb-27-5MJ"/>
                         <outlet property="showAlbumCheckbox" destination="1JE-H8-vxH" id="8qH-aE-X7m"/>
                         <outlet property="showArtistCheckbox" destination="ikO-WV-lWE" id="HcY-6O-WkZ"/>

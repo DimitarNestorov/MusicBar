@@ -1,3 +1,5 @@
+@import DNLoginServiceKit;
+
 #import "GeneralPreferencesTabPageViewController.h"
 
 #import "UserDefaultsKeys.h"
@@ -16,6 +18,8 @@
 @property (weak) IBOutlet PreferencesCheckbox *enableErrorReportingCheckbox;
 @property (weak) IBOutlet PreferencesPopUpButton *iconPopUpButton;
 @property (weak) IBOutlet PreferencesPopUpButton *iconWhilePlayingPopUpButton;
+
+@property (weak) IBOutlet NSButton *launchAtLoginCheckbox;
 
 @property (weak) IBOutlet NSSlider *maximumWidthSlider;
 
@@ -49,12 +53,22 @@
     
     NSInteger maximumWidth = [self.userDefaults integerForKey:MaximumWidthUserDefaultsKey];
     self.maximumWidthSlider.integerValue = maximumWidth;
+    
+    self.launchAtLoginCheckbox.state = DNLoginServiceKit.loginItemExists ? NSControlStateValueOn : NSControlStateValueOff;
 }
 
 #pragma mark - Actions
 
 - (IBAction)booleanAction:(PreferencesCheckbox *)sender {
     [self.userDefaults setBool:sender.state == NSControlStateValueOn forKey:sender.userDefaultsKey];
+}
+
+- (IBAction)launchAtLoginCheckboxAction:(NSButton *)sender {
+    if (self.launchAtLoginCheckbox.state == NSControlStateValueOn) {
+        [DNLoginServiceKit addLoginItem];
+    } else {
+        [DNLoginServiceKit removeLoginItem];
+    }
 }
 
 - (IBAction)popUpBoxAction:(PreferencesPopUpButton *)sender {

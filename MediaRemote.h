@@ -16,8 +16,8 @@ void MRMediaRemoteGetNowPlayingInfo(dispatch_queue_t queue,
     MRMediaRemoteGetNowPlayingInfoBlock block);
 void MRMediaRemoteGetNowPlayingApplicationIsPlaying(dispatch_queue_t queue,
     MRMediaRemoteGetNowPlayingApplicationIsPlayingBlock block);
-NSString *MRNowPlayingClientGetBundleIdentifier(id clientObj);
-NSString *MRNowPlayingClientGetParentAppBundleIdentifier(id clientObj);
+NSString *MRNowPlayingClientGetBundleIdentifier(id clientObj) __attribute__((warn_unused_result));
+NSString *MRNowPlayingClientGetParentAppBundleIdentifier(id clientObj) __attribute__((warn_unused_result));
 void MRMediaRemoteSetElapsedTime(double time);
 
 

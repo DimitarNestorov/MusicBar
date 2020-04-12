@@ -4,7 +4,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (StatusItemLength)
 
-- (CGFloat)statusItemLengthWithSelf;
+- (CGFloat)statusItemLengthWithSelf __attribute__((warn_unused_result));
 
 @end
 

@@ -25,11 +25,39 @@
 		6E3FB6EA24418BD900A343FE /* GeneralPreferencesTabPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB6E924418BD900A343FE /* GeneralPreferencesTabPageViewController.m */; };
 		6E3FB6ED2441920F00A343FE /* PreferencesCheckbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB6EC2441920F00A343FE /* PreferencesCheckbox.m */; };
 		6E3FB6F02441A69900A343FE /* PreferencesPopUpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB6EF2441A69900A343FE /* PreferencesPopUpButton.m */; };
+		6E3FB72D2443799D00A343FE /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB72C2443799D00A343FE /* Cartfile */; };
+		6E3FB73024437B3600A343FE /* DNLoginServiceKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */; };
+		6E3FB73124437B3600A343FE /* DNLoginServiceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E3FB73724437D4900A343FE /* DNLoginServiceKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E3FB73624437D4900A343FE /* DNLoginServiceKit.framework.dSYM */; };
 		6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192F5243E94A100879AEE /* ProgressContainerView.m */; };
 		6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8192F92440EEAD00879AEE /* Preferences.storyboard */; };
 		6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192FF2441271200879AEE /* PreferencesTabViewController.m */; };
 		6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81930224412A5000879AEE /* PreferencesTabPageViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6E3FB73224437B3600A343FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6E3FB73124437B3600A343FE /* DNLoginServiceKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E3FB73324437B4800A343FE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				6E3FB73724437D4900A343FE /* DNLoginServiceKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6E04236C2439F6AE00E113F4 /* MusicBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +95,10 @@
 		6E3FB6EC2441920F00A343FE /* PreferencesCheckbox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesCheckbox.m; sourceTree = "<group>"; };
 		6E3FB6EE2441A69900A343FE /* PreferencesPopUpButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesPopUpButton.h; sourceTree = "<group>"; };
 		6E3FB6EF2441A69900A343FE /* PreferencesPopUpButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesPopUpButton.m; sourceTree = "<group>"; };
+		6E3FB72B244378F100A343FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6E3FB72C2443799D00A343FE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DNLoginServiceKit.framework; path = Carthage/Build/Mac/DNLoginServiceKit.framework; sourceTree = "<group>"; };
+		6E3FB73624437D4900A343FE /* DNLoginServiceKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = DNLoginServiceKit.framework.dSYM; path = Carthage/Build/Mac/DNLoginServiceKit.framework.dSYM; sourceTree = "<group>"; };
 		6E8192F4243E94A100879AEE /* ProgressContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressContainerView.h; sourceTree = "<group>"; };
 		6E8192F5243E94A100879AEE /* ProgressContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressContainerView.m; sourceTree = "<group>"; };
 		6E8192F92440EEAD00879AEE /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -82,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E0423EA243A437700E113F4 /* MediaRemote.framework in Frameworks */,
+				6E3FB73024437B3600A343FE /* DNLoginServiceKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,13 +125,16 @@
 			isa = PBXGroup;
 			children = (
 				6E0423E8243A437700E113F4 /* Frameworks */,
+				6E3FB73824437D8800A343FE /* Symbols */,
 				6E04236D2439F6AE00E113F4 /* Products */,
 				6E04241A243D449400E113F4 /* Categories */,
 				6E8192FD244126E100879AEE /* Preferences */,
 				6E0423722439F6AF00E113F4 /* Assets.xcassets */,
+				6E3FB72B244378F100A343FE /* README.md */,
 				6E04237A2439F6AF00E113F4 /* app.entitlements */,
 				6E3FB6D92441458100A343FE /* DefaultPreferences.plist */,
 				6E0423772439F6AF00E113F4 /* Info.plist */,
+				6E3FB72C2443799D00A343FE /* Cartfile */,
 				6E0423782439F6AF00E113F4 /* main.m */,
 				6E0423742439F6AF00E113F4 /* Main.xib */,
 				6E0423F0243B124000E113F4 /* MediaRemote.h */,
@@ -131,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				6E0423E9243A437700E113F4 /* MediaRemote.framework */,
+				6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +185,14 @@
 				6E3FB6DC2441695C00A343FE /* NSString+StatusItemLength.mm */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		6E3FB73824437D8800A343FE /* Symbols */ = {
+			isa = PBXGroup;
+			children = (
+				6E3FB73624437D4900A343FE /* DNLoginServiceKit.framework.dSYM */,
+			);
+			name = Symbols;
 			sourceTree = "<group>";
 		};
 		6E8192FD244126E100879AEE /* Preferences */ = {
@@ -178,6 +223,8 @@
 				6E0423682439F6AE00E113F4 /* Sources */,
 				6E0423692439F6AE00E113F4 /* Frameworks */,
 				6E04236A2439F6AE00E113F4 /* Resources */,
+				6E3FB73224437B3600A343FE /* Embed Frameworks */,
+				6E3FB73324437B4800A343FE /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -225,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3FB72D2443799D00A343FE /* Cartfile in Resources */,
 				6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */,
 				6E3FB6DA2441458100A343FE /* DefaultPreferences.plist in Resources */,
 				6E0423732439F6AF00E113F4 /* Assets.xcassets in Resources */,
@@ -389,6 +437,10 @@
 				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,6 +462,10 @@
 				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
