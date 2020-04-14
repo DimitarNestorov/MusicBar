@@ -1,0 +1,20 @@
+default_platform(:mac)
+
+platform :mac do
+  lane :release do
+    build_mac_app(
+      export_method: "developer-id",
+      skip_package_pkg: true,
+    )
+    notarize(
+      package: "MusicBar.app",
+      username: ENV['APPLE_ID_EMAIL'],
+      print_log: true,
+    )
+    upload_symbols_to_sentry(
+      auth_token: ENV['SENTRY_AUTH_TOKEN'],
+      org_slug: "musicbar",
+      project_slug: "mac",
+    )
+  end
+end

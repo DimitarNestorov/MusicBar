@@ -1,0 +1,1 @@
+SENTRY_DSN = https:/$()/random_string@random_string.ingest.sentry.io/project_id

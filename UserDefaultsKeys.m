@@ -1,11 +1,11 @@
 #import "UserDefaultsKeys.h"
 
-NSString *ShowArtistUserDefaultsKey = @"showArtist";
-NSString *ShowTitleUserDefaultsKey = @"showTitle";
-NSString *ShowAlbumUserDefaultsKey = @"showAlbum";
-NSString *ShowRemainingTimeUserDefaultsKey = @"showRemainingTime";
-NSString *HideTextWhenPausedUserDefaultsKey = @"hideTextWhenPaused";
-NSString *IconUserDefaultsKey = @"icon";
-NSString *IconWhilePlayingUserDefaultsKey = @"iconWhilePlaying";
-NSString *MaximumWidthUserDefaultsKey = @"maximumWidth";
-NSString *EnableErrorReportingUserDefaultsKey = @"enableErrorReporting";
+NSString *ShowArtistUserDefaultsKey = @"MBShowArtist";
+NSString *ShowTitleUserDefaultsKey = @"MBShowTitle";
+NSString *ShowAlbumUserDefaultsKey = @"MBShowAlbum";
+NSString *ShowRemainingTimeUserDefaultsKey = @"MBShowRemainingTime";
+NSString *HideTextWhenPausedUserDefaultsKey = @"MBHideTextWhenPaused";
+NSString *IconUserDefaultsKey = @"MBIcon";
+NSString *IconWhilePlayingUserDefaultsKey = @"MBIconWhilePlaying";
+NSString *MaximumWidthUserDefaultsKey = @"MBMaximumWidth";
+NSString *EnableErrorReportingUserDefaultsKey = @"MBEnableErrorReporting";

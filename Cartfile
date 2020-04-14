@@ -1,1 +1,2 @@
-github "dimitarnestorov/DNLoginServiceKit"
+github "dimitarnestorov/DNLoginServiceKit" "v1.0.0"
+github "getsentry/sentry-cocoa" "5.0.0-beta.1"

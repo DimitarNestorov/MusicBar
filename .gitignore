@@ -23,3 +23,13 @@ DerivedData
 
 Carthage/Checkouts/
 Carthage/Build/
+
+Config.xcconfig
+
+
+fastlane/README.md
+fastlane/report.xml
+
+MusicBar.app/
+MusicBar.app.dSYM.zip
+MusicBar.zip

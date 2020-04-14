@@ -40,6 +40,7 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
 }
 
 - (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
     MRMediaRemoteUnregisterForNowPlayingNotifications();
 }
 

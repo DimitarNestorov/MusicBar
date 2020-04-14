@@ -2,23 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>showArtist</key>
+	<key>MBShowArtist</key>
 	<true/>
-	<key>showTitle</key>
+	<key>MBShowTitle</key>
 	<true/>
-	<key>showAlbum</key>
+	<key>MBShowAlbum</key>
 	<false/>
-	<key>showRemainingTime</key>
+	<key>MBShowRemainingTime</key>
 	<false/>
-	<key>hideTextWhenPaused</key>
+	<key>MBHideTextWhenPaused</key>
 	<false/>
-	<key>icon</key>
+	<key>MBIcon</key>
 	<string>􀃽</string>
-	<key>iconWhilePlaying</key>
+	<key>MBIconWhilePlaying</key>
 	<string></string>
-	<key>maximumWidth</key>
+	<key>MBMaximumWidth</key>
 	<integer>400</integer>
-	<key>enableErrorReporting</key>
+	<key>MBEnableErrorReporting</key>
 	<false/>
 </dict>
 </plist>

@@ -1,0 +1,3 @@
+Fastfile linguist-vendored=true
+Gemfile* linguist-vendored=true
+*.sh linguist-vendored=true
