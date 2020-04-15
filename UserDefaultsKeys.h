@@ -9,3 +9,4 @@ extern NSString *IconUserDefaultsKey;
 extern NSString *IconWhilePlayingUserDefaultsKey;
 extern NSString *MaximumWidthUserDefaultsKey;
 extern NSString *EnableErrorReportingUserDefaultsKey;
+extern NSString *EnableAutomaticUpdatesUserDefaultsKey;

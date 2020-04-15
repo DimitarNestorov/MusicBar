@@ -20,5 +20,7 @@
 	<integer>400</integer>
 	<key>MBEnableErrorReporting</key>
 	<false/>
+	<key>MBEnableAutomaticUpdates</key>
+	<false/>
 </dict>
 </plist>

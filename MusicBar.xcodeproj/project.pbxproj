@@ -31,10 +31,28 @@
 		6E3FB73C2443859500A343FE /* Sentry.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E3FB73B2443859500A343FE /* Sentry.framework.dSYM */; };
 		6E3FB73D2444173A00A343FE /* Sentry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7392443858900A343FE /* Sentry.framework */; };
 		6E3FB73E2444173A00A343FE /* Sentry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7392443858900A343FE /* Sentry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E3FB74C2446596300A343FE /* Squirrel.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */; };
+		6E3FB74E2446597100A343FE /* Mantle.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB74D2446597100A343FE /* Mantle.framework.dSYM */; };
+		6E3FB74F244659C300A343FE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7452446592400A343FE /* ReactiveCocoa.framework */; };
+		6E3FB750244659C300A343FE /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7452446592400A343FE /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E3FB751244659C400A343FE /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7472446592D00A343FE /* Mantle.framework */; };
+		6E3FB752244659C400A343FE /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7472446592D00A343FE /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E3FB753244659C500A343FE /* Squirrel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7492446593700A343FE /* Squirrel.framework */; };
+		6E3FB754244659C500A343FE /* Squirrel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7492446593700A343FE /* Squirrel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E3FB755244659CE00A343FE /* Mantle.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E3FB74D2446597100A343FE /* Mantle.framework.dSYM */; };
+		6E3FB756244659CE00A343FE /* Squirrel.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */; };
 		6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192F5243E94A100879AEE /* ProgressContainerView.m */; };
 		6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8192F92440EEAD00879AEE /* Preferences.storyboard */; };
 		6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192FF2441271200879AEE /* PreferencesTabViewController.m */; };
 		6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81930224412A5000879AEE /* PreferencesTabPageViewController.m */; };
+		6E887B212448F14E0011849F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B162448F14E0011849F /* .gitignore */; };
+		6E887B222448F14E0011849F /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B172448F14E0011849F /* .gitattributes */; };
+		6E887B232448F14E0011849F /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B182448F14E0011849F /* Gemfile */; };
+		6E887B242448F14E0011849F /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B192448F14E0011849F /* Gemfile.lock */; };
+		6E887B252448F14E0011849F /* release.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B1C2448F14E0011849F /* release.yml */; };
+		6E887B262448F14E0011849F /* generateConfigFromEnv.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B1E2448F14E0011849F /* generateConfigFromEnv.sh */; };
+		6E887B272448F14E0011849F /* publishAutoUpdate.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B1F2448F14E0011849F /* publishAutoUpdate.sh */; };
+		6E887B282448F14E0011849F /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 6E887B202448F14E0011849F /* Cartfile.resolved */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +63,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6E3FB73124437B3600A343FE /* DNLoginServiceKit.framework in Embed Frameworks */,
+				6E3FB752244659C400A343FE /* Mantle.framework in Embed Frameworks */,
+				6E3FB754244659C500A343FE /* Squirrel.framework in Embed Frameworks */,
+				6E3FB750244659C300A343FE /* ReactiveCocoa.framework in Embed Frameworks */,
 				6E3FB73E2444173A00A343FE /* Sentry.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -56,6 +77,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				6E3FB755244659CE00A343FE /* Mantle.framework.dSYM in CopyFiles */,
+				6E3FB756244659CE00A343FE /* Squirrel.framework.dSYM in CopyFiles */,
 				6E3FB73724437D4900A343FE /* DNLoginServiceKit.framework.dSYM in CopyFiles */,
 				6E3FB73C2443859500A343FE /* Sentry.framework.dSYM in CopyFiles */,
 			);
@@ -71,7 +94,6 @@
 		6E0423752439F6AF00E113F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Main.xib; sourceTree = "<group>"; };
 		6E0423772439F6AF00E113F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E0423782439F6AF00E113F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6E04237A2439F6AF00E113F4 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		6E0423BB243A1A8C00E113F4 /* ControlsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ControlsView.h; sourceTree = "<group>"; };
 		6E0423BC243A1A8C00E113F4 /* ControlsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlsView.m; sourceTree = "<group>"; };
 		6E0423C1243A37FA00E113F4 /* PopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
@@ -107,6 +129,11 @@
 		6E3FB73B2443859500A343FE /* Sentry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Sentry.framework.dSYM; path = Carthage/Build/Mac/Sentry.framework.dSYM; sourceTree = "<group>"; };
 		6E3FB743244438B900A343FE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		6E3FB744244438FC00A343FE /* ConfigExample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigExample.xcconfig; sourceTree = "<group>"; };
+		6E3FB7452446592400A343FE /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		6E3FB7472446592D00A343FE /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/Mac/Mantle.framework; sourceTree = "<group>"; };
+		6E3FB7492446593700A343FE /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squirrel.framework; path = Carthage/Build/Mac/Squirrel.framework; sourceTree = "<group>"; };
+		6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Squirrel.framework.dSYM; path = Carthage/Build/Mac/Squirrel.framework.dSYM; sourceTree = "<group>"; };
+		6E3FB74D2446597100A343FE /* Mantle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mantle.framework.dSYM; path = Carthage/Build/Mac/Mantle.framework.dSYM; sourceTree = "<group>"; };
 		6E8192F4243E94A100879AEE /* ProgressContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressContainerView.h; sourceTree = "<group>"; };
 		6E8192F5243E94A100879AEE /* ProgressContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressContainerView.m; sourceTree = "<group>"; };
 		6E8192F92440EEAD00879AEE /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -114,6 +141,14 @@
 		6E8192FF2441271200879AEE /* PreferencesTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTabViewController.m; sourceTree = "<group>"; };
 		6E81930124412A5000879AEE /* PreferencesTabPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesTabPageViewController.h; sourceTree = "<group>"; };
 		6E81930224412A5000879AEE /* PreferencesTabPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTabPageViewController.m; sourceTree = "<group>"; };
+		6E887B162448F14E0011849F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		6E887B172448F14E0011849F /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
+		6E887B182448F14E0011849F /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		6E887B192448F14E0011849F /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		6E887B1C2448F14E0011849F /* release.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = release.yml; sourceTree = "<group>"; };
+		6E887B1E2448F14E0011849F /* generateConfigFromEnv.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generateConfigFromEnv.sh; sourceTree = "<group>"; };
+		6E887B1F2448F14E0011849F /* publishAutoUpdate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = publishAutoUpdate.sh; sourceTree = "<group>"; };
+		6E887B202448F14E0011849F /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E0423EA243A437700E113F4 /* MediaRemote.framework in Frameworks */,
+				6E3FB74F244659C300A343FE /* ReactiveCocoa.framework in Frameworks */,
 				6E3FB73D2444173A00A343FE /* Sentry.framework in Frameworks */,
+				6E3FB753244659C500A343FE /* Squirrel.framework in Frameworks */,
 				6E3FB73024437B3600A343FE /* DNLoginServiceKit.framework in Frameworks */,
+				6E3FB751244659C400A343FE /* Mantle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +171,7 @@
 		6E0423632439F6AE00E113F4 = {
 			isa = PBXGroup;
 			children = (
+				6E887B152448F10A0011849F /* Configuration */,
 				6E0423E8243A437700E113F4 /* Frameworks */,
 				6E3FB73824437D8800A343FE /* Symbols */,
 				6E04236D2439F6AE00E113F4 /* Products */,
@@ -140,12 +179,8 @@
 				6E8192FD244126E100879AEE /* Preferences */,
 				6E0423722439F6AF00E113F4 /* Assets.xcassets */,
 				6E3FB72B244378F100A343FE /* README.md */,
-				6E04237A2439F6AF00E113F4 /* app.entitlements */,
 				6E3FB6D92441458100A343FE /* DefaultPreferences.plist */,
-				6E3FB743244438B900A343FE /* Config.xcconfig */,
-				6E3FB744244438FC00A343FE /* ConfigExample.xcconfig */,
 				6E0423772439F6AF00E113F4 /* Info.plist */,
-				6E3FB72C2443799D00A343FE /* Cartfile */,
 				6E0423782439F6AF00E113F4 /* main.m */,
 				6E0423742439F6AF00E113F4 /* Main.xib */,
 				6E0423F0243B124000E113F4 /* MediaRemote.h */,
@@ -178,6 +213,9 @@
 			isa = PBXGroup;
 			children = (
 				6E0423E9243A437700E113F4 /* MediaRemote.framework */,
+				6E3FB7452446592400A343FE /* ReactiveCocoa.framework */,
+				6E3FB7492446593700A343FE /* Squirrel.framework */,
+				6E3FB7472446592D00A343FE /* Mantle.framework */,
 				6E3FB7392443858900A343FE /* Sentry.framework */,
 				6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */,
 			);
@@ -202,6 +240,8 @@
 		6E3FB73824437D8800A343FE /* Symbols */ = {
 			isa = PBXGroup;
 			children = (
+				6E3FB74D2446597100A343FE /* Mantle.framework.dSYM */,
+				6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */,
 				6E3FB73B2443859500A343FE /* Sentry.framework.dSYM */,
 				6E3FB73624437D4900A343FE /* DNLoginServiceKit.framework.dSYM */,
 			);
@@ -226,6 +266,48 @@
 			path = Preferences;
 			sourceTree = "<group>";
 		};
+		6E887B152448F10A0011849F /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				6E887B1A2448F14E0011849F /* .github */,
+				6E887B172448F14E0011849F /* .gitattributes */,
+				6E887B162448F14E0011849F /* .gitignore */,
+				6E3FB72C2443799D00A343FE /* Cartfile */,
+				6E887B202448F14E0011849F /* Cartfile.resolved */,
+				6E887B182448F14E0011849F /* Gemfile */,
+				6E887B192448F14E0011849F /* Gemfile.lock */,
+				6E3FB743244438B900A343FE /* Config.xcconfig */,
+				6E3FB744244438FC00A343FE /* ConfigExample.xcconfig */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		6E887B1A2448F14E0011849F /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				6E887B1B2448F14E0011849F /* workflows */,
+				6E887B1D2448F14E0011849F /* scripts */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		6E887B1B2448F14E0011849F /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				6E887B1C2448F14E0011849F /* release.yml */,
+			);
+			path = workflows;
+			sourceTree = "<group>";
+		};
+		6E887B1D2448F14E0011849F /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				6E887B1E2448F14E0011849F /* generateConfigFromEnv.sh */,
+				6E887B1F2448F14E0011849F /* publishAutoUpdate.sh */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -238,6 +320,7 @@
 				6E04236A2439F6AE00E113F4 /* Resources */,
 				6E3FB73224437B3600A343FE /* Embed Frameworks */,
 				6E3FB73324437B4800A343FE /* CopyFiles */,
+				6E3FB7572447DBC200A343FE /* Codesign ShipIt (Squirrel) */,
 			);
 			buildRules = (
 			);
@@ -285,14 +368,45 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E887B242448F14E0011849F /* Gemfile.lock in Resources */,
+				6E887B282448F14E0011849F /* Cartfile.resolved in Resources */,
+				6E887B252448F14E0011849F /* release.yml in Resources */,
+				6E887B232448F14E0011849F /* Gemfile in Resources */,
+				6E887B262448F14E0011849F /* generateConfigFromEnv.sh in Resources */,
 				6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */,
+				6E887B212448F14E0011849F /* .gitignore in Resources */,
 				6E3FB6DA2441458100A343FE /* DefaultPreferences.plist in Resources */,
+				6E3FB74C2446596300A343FE /* Squirrel.framework.dSYM in Resources */,
+				6E887B272448F14E0011849F /* publishAutoUpdate.sh in Resources */,
 				6E0423732439F6AF00E113F4 /* Assets.xcassets in Resources */,
 				6E0423762439F6AF00E113F4 /* Main.xib in Resources */,
+				6E3FB74E2446597100A343FE /* Mantle.framework.dSYM in Resources */,
+				6E887B222448F14E0011849F /* .gitattributes in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6E3FB7572447DBC200A343FE /* Codesign ShipIt (Squirrel) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Codesign ShipIt (Squirrel)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "LOCATION=\"${BUILT_PRODUCTS_DIR}\"/\"${FRAMEWORKS_FOLDER_PATH}\"\n\n# By default, use the configured code signing identity for the project/target\nIDENTITY=\"${CODE_SIGN_IDENTITY}\"\nif [ \"$IDENTITY\" == \"\" ]\nthen\n# If a code signing identity is not specified, use ad hoc signing\nIDENTITY=\"-\"\nfi\n\ncodesign --verbose --deep --force -o runtime --sign \"$IDENTITY\" \"$LOCATION/Squirrel.framework/Resources/Shipit\"\n\ncodesign --verbose --deep --force --verify --sign \"$IDENTITY\" \"$LOCATION/Squirrel.framework/Squirrel\"\ncodesign --verbose --deep --force --verify --sign \"$IDENTITY\" \"$LOCATION/Squirrel.framework/Versions/A\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E0423682439F6AE00E113F4 /* Sources */ = {
@@ -447,7 +561,6 @@
 			baseConfigurationReference = 6E3FB743244438B900A343FE /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -478,7 +591,6 @@
 			baseConfigurationReference = 6E3FB743244438B900A343FE /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = app.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;

@@ -1,3 +1,8 @@
+@import ReactiveCocoa;
+@import Squirrel;
+@import Sentry;
+@import UserNotifications;
+
 #import "AppDelegate.h"
 
 #import "NSString+StatusItemLength.h"
@@ -5,6 +10,12 @@
 #import "UserDefaultsKeys.h"
 
 #import "GlobalState.h"
+
+void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
+    if (error != nil) {
+        [SentrySDK captureError:error];
+    }
+};
 
 @interface AppDelegate ()
 
@@ -30,6 +41,9 @@
 @property (strong) NSString *icon;
 @property (strong) NSString *iconWhilePlaying;
 @property NSInteger maximumWidth;
+
+@property (strong) SQRLUpdater *updater;
+@property (strong) RACDisposable *interval;
 
 @end
 
@@ -68,6 +82,71 @@
     self.icon = [self.userDefaults stringForKey:IconUserDefaultsKey];
     self.iconWhilePlaying = [self.userDefaults stringForKey:IconWhilePlayingUserDefaultsKey];
     self.maximumWidth = [self.userDefaults integerForKey:MaximumWidthUserDefaultsKey];
+    
+    if ([self.userDefaults boolForKey:EnableAutomaticUpdatesUserDefaultsKey]) {
+        [self turnOnAutomaticUpdates];
+    } else {
+        [self turnOffAutomaticUpdates];
+    }
+}
+
+- (void)turnOffAutomaticUpdates {
+    if (self.updater == nil) return;
+    
+    [self.interval dispose];
+    self.updater = nil;
+}
+
+- (void)turnOnAutomaticUpdates {
+#ifdef DEBUG
+    return;
+#else
+    if (self.updater != nil) return;
+        
+    NSURLComponents *components = [[NSURLComponents alloc] init];
+
+    components.scheme = @"https";
+    components.host = @"raw.githubusercontent.com";
+    components.path = @"/dimitarnestorov/MusicBar/update/stable.json";
+    
+    self.updater = [[SQRLUpdater alloc] initWithUpdateRequest:[NSURLRequest requestWithURL:components.URL] forVersion:[NSBundle.mainBundle.infoDictionary objectForKey:@"CFBundleShortVersionString"]];
+
+    if (@available(macOS 10.14, *)) {
+        void (^completionHandler)(BOOL, NSError * _Nullable) = ^(BOOL granted, NSError * _Nullable error) {
+            if (error != nil) {
+                [SentrySDK captureError:error];
+                return;
+            }
+        };
+        [UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:UNAuthorizationOptionAlert completionHandler:completionHandler];
+
+        [self.updater.updates subscribeNext:^(SQRLDownloadedUpdate *downloadedUpdate) {
+            [UNUserNotificationCenter.currentNotificationCenter getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+                if (settings.authorizationStatus == UNAuthorizationStatusNotDetermined || settings.authorizationStatus == UNAuthorizationStatusDenied) return;
+                
+                UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
+                content.title = @"A new update is ready to install";
+                content.subtitle = @"Click here to restart MusicBar";
+                UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:@"MBNewUpdateAvailable" content:content trigger:nil];
+                [UNUserNotificationCenter.currentNotificationCenter addNotificationRequest:request
+                                                                     withCompletionHandler:handleError];
+            }];
+        }];
+    }
+    
+    self.interval = [self.updater startAutomaticChecksWithInterval:60 * 60 * 4];
+    [self.updater.checkForUpdatesCommand execute:nil];
+#endif
+}
+
+#pragma mark - User notification center delegate
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler API_AVAILABLE(macos(10.14)) {
+    if ([response.notification.request.identifier isEqualToString:@"MBNewUpdateAvailable"] && [response.actionIdentifier isEqualToString:UNNotificationDefaultActionIdentifier]) {
+        [[self.updater relaunchToInstallUpdate] subscribeError:handleError];
+    }
+    
+    completionHandler();
 }
 
 #pragma mark - Application delegate
@@ -101,6 +180,11 @@
     self.positioningWindow.backgroundColor = NSColor.clearColor;
     self.positioningWindow.level = kCGMaximumWindowLevel | kCGFloatingWindowLevel;
     self.positioningWindow.ignoresMouseEvents = YES;
+    
+    if (@available(macOS 10.14, *)) {
+        UNUserNotificationCenter.currentNotificationCenter.delegate = self;
+        [UNUserNotificationCenter.currentNotificationCenter removeDeliveredNotificationsWithIdentifiers:@[@"MBNewUpdateAvailable"]];
+    }
 }
 
 - (void)applicationWillResignActive:(NSNotification *)notification {

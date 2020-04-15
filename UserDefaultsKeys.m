@@ -9,3 +9,4 @@ NSString *IconUserDefaultsKey = @"MBIcon";
 NSString *IconWhilePlayingUserDefaultsKey = @"MBIconWhilePlaying";
 NSString *MaximumWidthUserDefaultsKey = @"MBMaximumWidth";
 NSString *EnableErrorReportingUserDefaultsKey = @"MBEnableErrorReporting";
+NSString *EnableAutomaticUpdatesUserDefaultsKey = @"MBEnableAutomaticUpdates";

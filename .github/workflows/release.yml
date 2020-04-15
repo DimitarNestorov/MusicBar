@@ -13,17 +13,28 @@ jobs:
     - name: Run xcode-select
       run: sudo xcode-select -s /Applications/Xcode_11.4.app
 
-    - name: Setup Carthage cache
+    - name: Carthage cache
       uses: actions/cache@v1
       id: carthage-cache
       with:
         path: Carthage
         key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-carthage-
 
-    - name: Install dependencies
+    - name: Carthage install
       if: steps.carthage-cache.outputs.cache-hit != 'true'
       run: |
         carthage bootstrap --no-use-binaries --platform macOS --cache-builds
+
+    - name: Bundle cache
+      uses: actions/cache@v1
+      id: bundle-cache
+      with:
+        path: bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
 
     - name: Install certificate
       uses: apple-actions/import-codesign-certs@v1
@@ -31,19 +42,18 @@ jobs:
         p12-file-base64: ${{ secrets.DEVELOPER_ID_APPLICATION_CERTIFICATE }}
         p12-password: ${{ secrets.DEVELOPER_ID_APPLICATION_CERTIFICATE_PASSWORD }}
 
-    - name: Create xcconfig
-      env:
-        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-      run: |
-        ./.github/scripts/generateConfigFromEnv.sh
-
     - name: Build
       env:
+        SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         APPLE_ID_EMAIL: ${{ secrets.APPLE_ID_EMAIL }}
         FASTLANE_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
       run: |
-        fastlane release
+        ./.github/scripts/generateConfigFromEnv.sh
+        curl -sL https://sentry.io/get-cli/ | bash
+        bundle config path bundle
+        bundle install --jobs 4 --retry 3
+        bundle exec fastlane release
         zip -r MusicBar.zip MusicBar.app
 
     - name: Create release
@@ -66,3 +76,7 @@ jobs:
         asset_path: ./MusicBar.zip
         asset_name: MusicBar.zip
         asset_content_type: application/zip
+
+    - name: Publish auto update release
+      run: |
+        ./.github/scripts/publishAutoUpdate.sh ${{ github.ref }} ${{ secrets.GITHUB_TOKEN }}

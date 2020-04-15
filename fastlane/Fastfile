@@ -11,10 +11,12 @@ platform :mac do
       username: ENV['APPLE_ID_EMAIL'],
       print_log: true,
     )
-    upload_symbols_to_sentry(
+    sentry_upload_dsym(
       auth_token: ENV['SENTRY_AUTH_TOKEN'],
       org_slug: "musicbar",
       project_slug: "mac",
+      dsym_path: './MusicBar.app.dSYM.zip',
+      info_plist: './Info.plist',
     )
   end
 end

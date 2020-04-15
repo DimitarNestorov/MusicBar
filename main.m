@@ -1,6 +1,5 @@
 @import Cocoa;
-
-#import <Sentry/Sentry.h>
+@import Sentry;
 
 #import "UserDefaultsKeys.h"
 

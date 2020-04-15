@@ -15,6 +15,7 @@
 @property (weak) IBOutlet PreferencesCheckbox *showTitleCheckbox;
 @property (weak) IBOutlet PreferencesCheckbox *showAlbumCheckbox;
 @property (weak) IBOutlet PreferencesCheckbox *hideTextWhenPausedCheckbox;
+@property (weak) IBOutlet PreferencesCheckbox *enableAutomaticUpdatesCheckbox;
 @property (weak) IBOutlet PreferencesCheckbox *enableErrorReportingCheckbox;
 @property (weak) IBOutlet PreferencesPopUpButton *iconPopUpButton;
 @property (weak) IBOutlet PreferencesPopUpButton *iconWhilePlayingPopUpButton;
@@ -47,6 +48,7 @@
     [self setupCheckbox:self.showTitleCheckbox userDefaultsKey:ShowTitleUserDefaultsKey];
     [self setupCheckbox:self.showAlbumCheckbox userDefaultsKey:ShowAlbumUserDefaultsKey];
     [self setupCheckbox:self.hideTextWhenPausedCheckbox userDefaultsKey:HideTextWhenPausedUserDefaultsKey];
+    [self setupCheckbox:self.enableAutomaticUpdatesCheckbox userDefaultsKey:EnableAutomaticUpdatesUserDefaultsKey];
     [self setupCheckbox:self.enableErrorReportingCheckbox userDefaultsKey:EnableErrorReportingUserDefaultsKey];
     [self setupPopUpBox:self.iconPopUpButton userDefaultsKey:IconUserDefaultsKey];
     [self setupPopUpBox:self.iconWhilePlayingPopUpButton userDefaultsKey:IconWhilePlayingUserDefaultsKey];
