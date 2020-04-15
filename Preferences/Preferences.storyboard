@@ -171,31 +171,16 @@
                                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5e-cP-g20" customClass="PreferencesPopUpButton">
                                                     <rect key="frame" x="-2" y="-1" width="73" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <popUpButtonCell key="cell" type="push" title="􀁬" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="86L-0L-yXM" id="3bt-bE-dbq">
+                                                    <popUpButtonCell key="cell" type="push" title="♫" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="TS3-s7-Abd" id="3bt-bE-dbq">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="4NC-ER-e93">
                                                             <items>
                                                                 <menuItem title="None" id="z1j-Xi-vTK"/>
-                                                                <menuItem title="􀑪" id="5tD-gL-MR5"/>
                                                                 <menuItem title="♩" id="Oig-px-GU2"/>
                                                                 <menuItem title="♪" id="zWp-a0-jIM"/>
-                                                                <menuItem title="♫" id="TS3-s7-Abd"/>
+                                                                <menuItem title="♫" state="on" id="TS3-s7-Abd"/>
                                                                 <menuItem title="♬" id="hPy-Yi-1UY"/>
-                                                                <menuItem title="􀝏" id="lV1-pz-2RV"/>
-                                                                <menuItem title="􀝎" id="GCo-Fg-KXX"/>
-                                                                <menuItem title="􀑈" id="Gha-mG-6WC"/>
-                                                                <menuItem title="􀁬" state="on" id="86L-0L-yXM"/>
-                                                                <menuItem title="􀁭" id="wg6-kT-Stz"/>
-                                                                <menuItem title="􀃽" id="pyK-43-mQy"/>
-                                                                <menuItem title="􀄧" id="MCc-o9-YF7"/>
-                                                                <menuItem title="􀓅" id="P2e-Mt-lQn"/>
-                                                                <menuItem title="􀞉" id="RYQ-OE-DFB"/>
-                                                                <menuItem title="􀞈" id="OSu-Ml-enP"/>
-                                                                <menuItem title="􀙫" id="PCl-A5-G0d"/>
-                                                                <menuItem title="􀑭" id="U5C-mT-y6K"/>
-                                                                <menuItem title="􀒷" id="1FZ-Tk-5Bd"/>
-                                                                <menuItem title="􀎵" id="lRo-79-y61"/>
                                                             </items>
                                                         </menu>
                                                         <connections>
@@ -232,25 +217,10 @@
                                                         <menu key="menu" id="bp1-VO-4YF">
                                                             <items>
                                                                 <menuItem title="None" state="on" id="QfW-nJ-ZMs"/>
-                                                                <menuItem title="􀑪" id="KyF-e2-1z2"/>
                                                                 <menuItem title="♩" id="QHP-aO-Gju"/>
                                                                 <menuItem title="♪" id="Xxq-3c-buE"/>
                                                                 <menuItem title="♫" id="zSt-Kq-ziM"/>
                                                                 <menuItem title="♬" id="x4T-ct-WTq"/>
-                                                                <menuItem title="􀝏" id="CFX-sU-PTJ"/>
-                                                                <menuItem title="􀝎" id="jyQ-Gq-4Hv"/>
-                                                                <menuItem title="􀑈" id="A1C-8w-bct"/>
-                                                                <menuItem title="􀁬" id="7gn-hd-nrE"/>
-                                                                <menuItem title="􀁭" id="WE5-dd-YtV"/>
-                                                                <menuItem title="􀃽" id="lOz-GC-BKW"/>
-                                                                <menuItem title="􀄧" id="9HC-s3-gH2"/>
-                                                                <menuItem title="􀓅" id="uRk-dh-Ww6"/>
-                                                                <menuItem title="􀞉" id="hFd-Wu-Tcy"/>
-                                                                <menuItem title="􀞈" id="Kz1-ZR-mq0"/>
-                                                                <menuItem title="􀙫" id="85U-eA-CnW"/>
-                                                                <menuItem title="􀑭" id="n2M-nc-9Oq"/>
-                                                                <menuItem title="􀒷" id="OeU-77-xGf"/>
-                                                                <menuItem title="􀎵" id="lTU-d6-8GX"/>
                                                             </items>
                                                         </menu>
                                                     </popUpButtonCell>
