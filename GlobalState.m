@@ -1,13 +1,29 @@
+#import <ScriptingBridge/ScriptingBridge.h>
+
+#import "ProtocolBuffer.h"
 #import "MediaRemote.h"
 
 #import "GlobalState.h"
+
+#import "Spotify.h"
+
+#import "Constants.h"
+
+#if __MAC_OS_X_VERSION_MIN_REQUIRED <= __MAC_10_14
+enum {
+    errAEEventWouldRequireUserConsent = -1744,
+};
+#endif
 
 const struct GlobalStateNotificationStruct GlobalStateNotification = {
     .infoDidChange = @"InfoDidChangeNotification",
     .isPlayingDidChange = @"IsPlayingDidChangeNotification",
 };
 
-@implementation GlobalState
+@implementation GlobalState {
+    SpotifyApplication * _Nullable spotifyApp;
+    SBApplication * _Nullable tidalApp;
+}
 
 - (void)initialize {
     [NSNotificationCenter.defaultCenter addObserver:self
@@ -33,15 +49,21 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
     [self getNowPlayingInfo];
 }
 
-- (instancetype)init {
-    self = [super init];
-    if (self) [self initialize];
-    return self;
-}
-
-- (void)dealloc {
-    [NSNotificationCenter.defaultCenter removeObserver:self];
-    MRMediaRemoteUnregisterForNowPlayingNotifications();
+- (NSImage * _Nullable)getAlbumArtworkFromSpotify {
+    if (spotifyApp == nil) {
+        if (@available(macOS 10.14, *)) {
+            NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:spotifyBundleIdentifier];
+            OSStatus error = AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, YES);
+            
+            if (error == errAEEventWouldRequireUserConsent || error == errAEEventNotPermitted) {
+                return spotifyRequestPermissionsAlbumArtwork;
+            }
+        }
+        spotifyApp = (id)[[SBApplication alloc] initWithBundleIdentifier:spotifyBundleIdentifier];
+        if (spotifyApp == nil) return nil;
+    }
+    SpotifyTrack *track = spotifyApp.currentTrack;
+    return [[NSImage alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:track.artworkUrl]];
 }
 
 - (void)getNowPlayingInfo {
@@ -58,7 +80,11 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
             self.artist = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtist];
             self.title = [info objectForKey:kMRMediaRemoteNowPlayingInfoTitle];
             self.album = [info objectForKey:kMRMediaRemoteNowPlayingInfoAlbum];
-            self.albumArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
+
+            _MRNowPlayingClientProtobuf *client = [[_MRNowPlayingClientProtobuf alloc] initWithData:[info objectForKey:kMRMediaRemoteNowPlayingInfoClientPropertiesData]];
+            NSData *mediaRemoteArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
+            self.albumArtwork = mediaRemoteArtwork != nil ? [[NSImage alloc] initWithData:mediaRemoteArtwork] : [client.bundleIdentifier isEqualToString:spotifyBundleIdentifier] ? [self getAlbumArtworkFromSpotify] : nil;
+
             self.timestamp = [info objectForKey:kMRMediaRemoteNowPlayingInfoTimestamp];
             self.duration = [info objectForKey:kMRMediaRemoteNowPlayingInfoDuration];
             self->_elapsedTime = [[info objectForKey:kMRMediaRemoteNowPlayingInfoElapsedTime] doubleValue];
@@ -66,6 +92,19 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
         
         [NSNotificationCenter.defaultCenter postNotificationName:GlobalStateNotification.infoDidChange object:nil];
     });
+}
+
+#pragma mark - NSObject methods
+
+- (instancetype)init {
+    self = [super init];
+    if (self) [self initialize];
+    return self;
+}
+
+- (void)dealloc {
+    [NSNotificationCenter.defaultCenter removeObserver:self];
+    MRMediaRemoteUnregisterForNowPlayingNotifications();
 }
 
 #pragma mark - Notification handlers

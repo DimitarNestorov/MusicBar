@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Spotify Request Permissions Album Artwork.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Spotify Request Permissions Album Artwork@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Spotify Request Permissions Album Artwork@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

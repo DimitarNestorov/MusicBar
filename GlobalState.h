@@ -1,4 +1,4 @@
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 extern const struct GlobalStateNotificationStruct {
     NSString * _Nonnull infoDidChange;
@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable) NSString *title;
 @property (nullable) NSString *artist;
 @property (nullable) NSString *album;
-@property (nullable) NSData *albumArtwork;
+@property (nullable) NSImage *albumArtwork;
 @property (nullable) NSDate *timestamp;
 @property (nullable) NSNumber *duration;
 @property (nonatomic) double elapsedTime;

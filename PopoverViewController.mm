@@ -1,4 +1,4 @@
-@import QuartzCore;
+#import <QuartzCore/QuartzCore.h>
 
 #import "PopoverViewController.h"
 
@@ -6,6 +6,10 @@
 #import "NSString+FormatTime.h"
 
 #import "GlobalState.h"
+
+static NSImage *playImage = [NSImage imageNamed:@"Play"];
+static NSImage *pauseImage = [NSImage imageNamed:@"Pause"];
+static NSSize albumArtworkSize = NSMakeSize(300, 300);
 
 @interface PopoverViewController ()
 
@@ -57,10 +61,11 @@
 }
 
 - (void)updatePopover {
-    NSImage *albumArtwork = [[[NSImage alloc] initWithData:self.globalState.albumArtwork] imageByScalingProportionallyToSize:NSMakeSize(300, 300)];
+    NSImage *albumArtwork = [self.globalState.albumArtwork imageByScalingProportionallyToSize:albumArtworkSize];
     self.albumArtwork.layer.contents = albumArtwork;
     self.maskedAlbumArtwork.layer.contents = albumArtwork;
-    self.playPauseButton.image = [NSImage imageNamed:self.globalState.isPlaying ? @"Pause" : @"Play"];
+    
+    self.playPauseButton.image = self.globalState.isPlaying ? pauseImage : playImage;
     
     if (!self.showRemainingTime && self.globalState.duration != nil) {
         self.durationRemainingTimeLabel.stringValue = [NSString formatSeconds:self.globalState.duration];
