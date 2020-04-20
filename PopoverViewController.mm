@@ -19,6 +19,7 @@ static NSSize albumArtworkSize = NSMakeSize(300, 300);
 
 @property (weak) IBOutlet NSView *albumArtwork;
 @property (weak) IBOutlet NSView *maskedAlbumArtwork;
+@property (strong) IBOutlet NSString *albumArtworkChecksum;
 
 @property (weak) IBOutlet NSView *progressBackground;
 
@@ -40,13 +41,20 @@ static NSSize albumArtworkSize = NSMakeSize(300, 300);
 @implementation PopoverViewController
 
 - (void)handleTickWithElapsedTime:(double)elapsedTime {
-    self.elapsedTimeLabel.stringValue = [NSString formatSecondsWithDouble:elapsedTime];
+    double duration = self.globalState.duration;
+    if (duration == 0) {
+        self.elapsedTimeLabel.stringValue = @"0:00";
+        self.durationRemainingTimeLabel.stringValue = self.showRemainingTime ? @"-0:00" : @"0:00";
+        self.progressWidthConstraint.constant = 0;
+        return;
+    }
     
-    double duration = self.globalState.duration.doubleValue;
+    self.elapsedTimeLabel.stringValue = [NSString formatSeconds:elapsedTime];
+    
     self.progressWidthConstraint.constant = self.progress.superview.bounds.size.width * (elapsedTime / duration);
 
     if (self.showRemainingTime) {
-        NSString *formattedTime = [NSString formatSecondsWithDouble:duration - elapsedTime];
+        NSString *formattedTime = [NSString formatSeconds:duration - elapsedTime];
         self.durationRemainingTimeLabel.stringValue = [NSString stringWithFormat:@"-%@", formattedTime];
     }
 }
@@ -61,13 +69,16 @@ static NSSize albumArtworkSize = NSMakeSize(300, 300);
 }
 
 - (void)updatePopover {
-    NSImage *albumArtwork = [self.globalState.albumArtwork imageByScalingProportionallyToSize:albumArtworkSize];
-    self.albumArtwork.layer.contents = albumArtwork;
-    self.maskedAlbumArtwork.layer.contents = albumArtwork;
+    if (self.albumArtworkChecksum != self.globalState.albumArtworkChecksum) {
+        NSImage *albumArtwork = [self.globalState.albumArtwork imageByScalingProportionallyToSize:albumArtworkSize];
+        self.albumArtwork.layer.contents = albumArtwork;
+        self.maskedAlbumArtwork.layer.contents = albumArtwork;
+        self.albumArtworkChecksum = self.globalState.albumArtworkChecksum;
+    }
     
     self.playPauseButton.image = self.globalState.isPlaying ? pauseImage : playImage;
     
-    if (!self.showRemainingTime && self.globalState.duration != nil) {
+    if (!self.showRemainingTime) {
         self.durationRemainingTimeLabel.stringValue = [NSString formatSeconds:self.globalState.duration];
     }
 
@@ -146,9 +157,8 @@ static NSSize albumArtworkSize = NSMakeSize(300, 300);
     NSEvent* event = NULL;
     NSWindow *targetWindow = sender.window;
     double elapsedTime = 0;
-    double duration = self.globalState.duration.doubleValue;
+    double duration = self.globalState.duration;
     CGFloat width = sender.bounds.size.width;
-    double newConstant = 0;
     
     @autoreleasepool {
         while (dragActive) {
@@ -162,9 +172,7 @@ static NSSize albumArtworkSize = NSMakeSize(300, 300);
                 case NSEventTypeLeftMouseUp:
                     dragActive = NO;
                 case NSEventTypeLeftMouseDragged:
-                    newConstant = MIN(MAX(location.x, 0), width);
-                    self.progressWidthConstraint.constant = newConstant;
-                    elapsedTime = (newConstant / width) * duration;
+                    elapsedTime = (MIN(MAX(location.x, 0), width) / width) * duration;
                     [self handleTickWithElapsedTime:elapsedTime];
                     break;
                 default:

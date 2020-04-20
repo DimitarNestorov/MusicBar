@@ -5,6 +5,8 @@
 
 #import "GlobalState.h"
 
+#import "NSData+MD5.h"
+
 #import "Spotify.h"
 
 #import "Constants.h"
@@ -73,8 +75,9 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
             self.title = nil;
             self.album = nil;
             self.albumArtwork = nil;
+            self.albumArtworkChecksum = nil;
             self.timestamp = nil;
-            self.duration = nil;
+            self.duration = 0;
             self->_elapsedTime = 0;
         } else {
             self.artist = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtist];
@@ -83,10 +86,20 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
 
             _MRNowPlayingClientProtobuf *client = [[_MRNowPlayingClientProtobuf alloc] initWithData:[info objectForKey:kMRMediaRemoteNowPlayingInfoClientPropertiesData]];
             NSData *mediaRemoteArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
-            self.albumArtwork = mediaRemoteArtwork != nil ? [[NSImage alloc] initWithData:mediaRemoteArtwork] : [client.bundleIdentifier isEqualToString:spotifyBundleIdentifier] ? [self getAlbumArtworkFromSpotify] : nil;
+            NSString *albumArtworkChecksum = mediaRemoteArtwork == nil ? nil :[ mediaRemoteArtwork MD5];
+            NSLog(@"%@ %@", self.albumArtworkChecksum, albumArtworkChecksum);
+            if (self.albumArtworkChecksum != albumArtworkChecksum) {
+                self.albumArtwork = mediaRemoteArtwork != nil
+                    ? [[NSImage alloc] initWithData:mediaRemoteArtwork]
+                    : [client.bundleIdentifier isEqualToString:spotifyBundleIdentifier]
+                        ? [self getAlbumArtworkFromSpotify]
+                        : nil;
+                self.albumArtworkChecksum = albumArtworkChecksum;
+            }
 
             self.timestamp = [info objectForKey:kMRMediaRemoteNowPlayingInfoTimestamp];
-            self.duration = [info objectForKey:kMRMediaRemoteNowPlayingInfoDuration];
+            NSNumber *duration = [info objectForKey:kMRMediaRemoteNowPlayingInfoDuration];
+            self.duration = duration == nil ? 0 : duration.doubleValue;
             self->_elapsedTime = [[info objectForKey:kMRMediaRemoteNowPlayingInfoElapsedTime] doubleValue];
         }
         

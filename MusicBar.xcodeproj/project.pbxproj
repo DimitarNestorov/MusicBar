@@ -20,6 +20,7 @@
 		6E0423FC243D240D00E113F4 /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423FB243D240D00E113F4 /* GlobalState.m */; };
 		6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */; };
 		6E052D4A24492AF1007D37A0 /* ProtocolBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E052D4924492AF1007D37A0 /* ProtocolBuffer.framework */; };
+		6E376A5D244E54B7005528CF /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E376A5C244E54B7005528CF /* NSData+MD5.m */; };
 		6E3FB6DA2441458100A343FE /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB6D92441458100A343FE /* DefaultPreferences.plist */; };
 		6E3FB6DD2441695C00A343FE /* NSString+StatusItemLength.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB6DC2441695C00A343FE /* NSString+StatusItemLength.mm */; };
 		6E3FB6E72441832A00A343FE /* UserDefaultsKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB6E62441832A00A343FE /* UserDefaultsKeys.m */; };
@@ -99,6 +100,8 @@
 		6E052D4C24492B33007D37A0 /* ProtocolBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolBuffer.h; sourceTree = "<group>"; };
 		6E052D4D24493155007D37A0 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		6E052D4E244935CB007D37A0 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		6E376A5B244E54B7005528CF /* NSData+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
+		6E376A5C244E54B7005528CF /* NSData+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
 		6E3FB6D92441458100A343FE /* DefaultPreferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		6E3FB6DB2441695C00A343FE /* NSString+StatusItemLength.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+StatusItemLength.h"; sourceTree = "<group>"; };
 		6E3FB6DC2441695C00A343FE /* NSString+StatusItemLength.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+StatusItemLength.mm"; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 				6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */,
 				6E3FB6DB2441695C00A343FE /* NSString+StatusItemLength.h */,
 				6E3FB6DC2441695C00A343FE /* NSString+StatusItemLength.mm */,
+				6E376A5B244E54B7005528CF /* NSData+MD5.h */,
+				6E376A5C244E54B7005528CF /* NSData+MD5.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */,
 				6E0423C3243A37FA00E113F4 /* PopoverViewController.mm in Sources */,
 				6E3FB6E72441832A00A343FE /* UserDefaultsKeys.m in Sources */,
+				6E376A5D244E54B7005528CF /* NSData+MD5.m in Sources */,
 				6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */,
 				6E0423712439F6AE00E113F4 /* AppDelegate.m in Sources */,
 				6E0423FC243D240D00E113F4 /* GlobalState.m in Sources */,
