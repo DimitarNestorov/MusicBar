@@ -127,7 +127,7 @@
 		6E3FB7492446593700A343FE /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squirrel.framework; path = Carthage/Build/Mac/Squirrel.framework; sourceTree = "<group>"; };
 		6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Squirrel.framework.dSYM; path = Carthage/Build/Mac/Squirrel.framework.dSYM; sourceTree = "<group>"; };
 		6E3FB74D2446597100A343FE /* Mantle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mantle.framework.dSYM; path = Carthage/Build/Mac/Mantle.framework.dSYM; sourceTree = "<group>"; };
-		6E6BF6B924502FA900702DE0 /* MediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRemote.framework; path = "Carthage/Private Frameworks/MediaRemote.framework"; sourceTree = "<group>"; };
+		6E6BF6B924502FA900702DE0 /* MediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRemote.framework; path = "MusicBar.xcodeproj/Private Frameworks/MediaRemote.framework"; sourceTree = "<group>"; };
 		6E6BF6BC2450301B00702DE0 /* LicenseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LicenseView.h; sourceTree = "<group>"; };
 		6E6BF6BD2450301B00702DE0 /* LicenseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LicenseView.m; sourceTree = "<group>"; };
 		6E6BF6BF245030AE00702DE0 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
@@ -576,7 +576,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Private\\ Frameworks",
+					"$(PROJECT_DIR)/MusicBar.xcodeproj/Private\\ Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -604,7 +604,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/Carthage/Private\\ Frameworks",
+					"$(PROJECT_DIR)/MusicBar.xcodeproj/Private\\ Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

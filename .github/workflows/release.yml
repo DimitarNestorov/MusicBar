@@ -2,7 +2,8 @@ name: release
 on:
   push:
     tags:
-      - '*'
+      - '[0-9]+.[0-9]+.[0-9]+'
+      - '[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+'
 jobs:
   deploy:
     runs-on: macos-latest
@@ -78,5 +79,6 @@ jobs:
         asset_content_type: application/zip
 
     - name: Publish auto update release
+      if: contains(github.ref, '-beta') == false
       run: |
         ./.github/scripts/publishAutoUpdate.sh ${{ github.ref }} ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 # MusicBar
 
-[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://raw.githubusercontent.com/dimitarnestorov/MusicBar/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://github.com/dimitarnestorov/MusicBar/blob/master/LICENSE)
 
 ## Player Support
 
@@ -28,6 +28,6 @@ Every player that supports the Now Playing Today widget is supported. If the pla
 
 ## License
 
-Licensed under the [European Union Public Licence (EUPL) 🔗](https://choosealicense.com/licenses/eupl-1.2/#). [Translations 🔗](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12).
+Licensed under the [European Union Public Licence (EUPL)](https://github.com/dimitarnestorov/MusicBar/blob/master/LICENSE). [Translations 🔗](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12).
 
 Copyright © 2020 Dimitar Nestorov
