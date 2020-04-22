@@ -1,4 +1,6 @@
 github "Mantle/Mantle" "1.5.8"
+github "PrivateFrameworks/PrivateMediaRemote" "v0.0.0"
+github "PrivateFrameworks/PrivateProtocolBuffer" "v0.0.0"
 github "ReactiveCocoa/ReactiveCocoa" "v2.5"
 github "devinfoley/Squirrel.Mac" "241053e3633b439080ed334b58b3d2336546749c"
 github "dimitarnestorov/DNLoginServiceKit" "v1.0.0"

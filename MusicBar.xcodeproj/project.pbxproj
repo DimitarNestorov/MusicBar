@@ -13,13 +13,11 @@
 		6E0423792439F6AF00E113F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423782439F6AF00E113F4 /* main.m */; };
 		6E0423BD243A1A8C00E113F4 /* ControlsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423BC243A1A8C00E113F4 /* ControlsView.m */; };
 		6E0423C3243A37FA00E113F4 /* PopoverViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423C2243A37FA00E113F4 /* PopoverViewController.mm */; };
-		6E0423EA243A437700E113F4 /* MediaRemote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E0423E9243A437700E113F4 /* MediaRemote.framework */; };
 		6E0423EF243B086B00E113F4 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423EE243B086B00E113F4 /* Button.m */; };
 		6E0423F3243B4A8E00E113F4 /* NSObject+Debounce.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423F2243B4A8E00E113F4 /* NSObject+Debounce.m */; };
 		6E0423F6243B691700E113F4 /* NSImage+ProportionalScaling.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423F5243B691700E113F4 /* NSImage+ProportionalScaling.m */; };
 		6E0423FC243D240D00E113F4 /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0423FB243D240D00E113F4 /* GlobalState.m */; };
 		6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */; };
-		6E052D4A24492AF1007D37A0 /* ProtocolBuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E052D4924492AF1007D37A0 /* ProtocolBuffer.framework */; };
 		6E376A5D244E54B7005528CF /* NSData+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E376A5C244E54B7005528CF /* NSData+MD5.m */; };
 		6E3FB6DA2441458100A343FE /* DefaultPreferences.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E3FB6D92441458100A343FE /* DefaultPreferences.plist */; };
 		6E3FB6DD2441695C00A343FE /* NSString+StatusItemLength.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E3FB6DC2441695C00A343FE /* NSString+StatusItemLength.mm */; };
@@ -37,6 +35,11 @@
 		6E3FB752244659C400A343FE /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7472446592D00A343FE /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E3FB753244659C500A343FE /* Squirrel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7492446593700A343FE /* Squirrel.framework */; };
 		6E3FB754244659C500A343FE /* Squirrel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7492446593700A343FE /* Squirrel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E6BF6B724502D4100702DE0 /* PrivateMediaRemote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E376BA2245027E3005528CF /* PrivateMediaRemote.framework */; };
+		6E6BF6B824502D4100702DE0 /* PrivateMediaRemote.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E376BA2245027E3005528CF /* PrivateMediaRemote.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E6BF6BA24502FA900702DE0 /* MediaRemote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6BF6B924502FA900702DE0 /* MediaRemote.framework */; };
+		6E6BF6BE2450301B00702DE0 /* LicenseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF6BD2450301B00702DE0 /* LicenseView.m */; };
+		6E6BF6C0245030AE00702DE0 /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6BF6BF245030AE00702DE0 /* PDFKit.framework */; };
 		6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192F5243E94A100879AEE /* ProgressContainerView.m */; };
 		6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8192F92440EEAD00879AEE /* Preferences.storyboard */; };
 		6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192FF2441271200879AEE /* PreferencesTabViewController.m */; };
@@ -57,6 +60,7 @@
 				6E3FB754244659C500A343FE /* Squirrel.framework in Embed Frameworks */,
 				6E3FB750244659C300A343FE /* ReactiveCocoa.framework in Embed Frameworks */,
 				6E3FB73E2444173A00A343FE /* Sentry.framework in Embed Frameworks */,
+				6E6BF6B824502D4100702DE0 /* PrivateMediaRemote.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,10 +88,8 @@
 		6E0423BC243A1A8C00E113F4 /* ControlsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ControlsView.m; sourceTree = "<group>"; };
 		6E0423C1243A37FA00E113F4 /* PopoverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
 		6E0423C2243A37FA00E113F4 /* PopoverViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = PopoverViewController.mm; sourceTree = "<group>"; };
-		6E0423E9243A437700E113F4 /* MediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRemote.framework; path = ../../../../System/Library/PrivateFrameworks/MediaRemote.framework; sourceTree = "<group>"; };
 		6E0423ED243B086B00E113F4 /* Button.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		6E0423EE243B086B00E113F4 /* Button.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
-		6E0423F0243B124000E113F4 /* MediaRemote.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaRemote.h; sourceTree = "<group>"; };
 		6E0423F1243B4A8E00E113F4 /* NSObject+Debounce.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Debounce.h"; sourceTree = "<group>"; };
 		6E0423F2243B4A8E00E113F4 /* NSObject+Debounce.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Debounce.m"; sourceTree = "<group>"; };
 		6E0423F4243B691700E113F4 /* NSImage+ProportionalScaling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSImage+ProportionalScaling.h"; sourceTree = "<group>"; };
@@ -96,12 +98,11 @@
 		6E0423FB243D240D00E113F4 /* GlobalState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalState.m; sourceTree = "<group>"; };
 		6E04241B243D44CC00E113F4 /* NSString+FormatTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+FormatTime.h"; sourceTree = "<group>"; };
 		6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+FormatTime.mm"; sourceTree = "<group>"; };
-		6E052D4924492AF1007D37A0 /* ProtocolBuffer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffer.framework; path = ../../../../System/Library/PrivateFrameworks/ProtocolBuffer.framework; sourceTree = "<group>"; };
-		6E052D4C24492B33007D37A0 /* ProtocolBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtocolBuffer.h; sourceTree = "<group>"; };
 		6E052D4D24493155007D37A0 /* Spotify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spotify.h; sourceTree = "<group>"; };
 		6E052D4E244935CB007D37A0 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		6E376A5B244E54B7005528CF /* NSData+MD5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+MD5.h"; sourceTree = "<group>"; };
 		6E376A5C244E54B7005528CF /* NSData+MD5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+MD5.m"; sourceTree = "<group>"; };
+		6E376BA2245027E3005528CF /* PrivateMediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PrivateMediaRemote.framework; path = Carthage/Build/Mac/PrivateMediaRemote.framework; sourceTree = "<group>"; };
 		6E3FB6D92441458100A343FE /* DefaultPreferences.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DefaultPreferences.plist; sourceTree = "<group>"; };
 		6E3FB6DB2441695C00A343FE /* NSString+StatusItemLength.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+StatusItemLength.h"; sourceTree = "<group>"; };
 		6E3FB6DC2441695C00A343FE /* NSString+StatusItemLength.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+StatusItemLength.mm"; sourceTree = "<group>"; };
@@ -126,6 +127,10 @@
 		6E3FB7492446593700A343FE /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squirrel.framework; path = Carthage/Build/Mac/Squirrel.framework; sourceTree = "<group>"; };
 		6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Squirrel.framework.dSYM; path = Carthage/Build/Mac/Squirrel.framework.dSYM; sourceTree = "<group>"; };
 		6E3FB74D2446597100A343FE /* Mantle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mantle.framework.dSYM; path = Carthage/Build/Mac/Mantle.framework.dSYM; sourceTree = "<group>"; };
+		6E6BF6B924502FA900702DE0 /* MediaRemote.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaRemote.framework; path = "Carthage/Private Frameworks/MediaRemote.framework"; sourceTree = "<group>"; };
+		6E6BF6BC2450301B00702DE0 /* LicenseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LicenseView.h; sourceTree = "<group>"; };
+		6E6BF6BD2450301B00702DE0 /* LicenseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LicenseView.m; sourceTree = "<group>"; };
+		6E6BF6BF245030AE00702DE0 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		6E8192F4243E94A100879AEE /* ProgressContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressContainerView.h; sourceTree = "<group>"; };
 		6E8192F5243E94A100879AEE /* ProgressContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressContainerView.m; sourceTree = "<group>"; };
 		6E8192F92440EEAD00879AEE /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -151,14 +156,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E0423EA243A437700E113F4 /* MediaRemote.framework in Frameworks */,
 				6E3FB74F244659C300A343FE /* ReactiveCocoa.framework in Frameworks */,
-				6E052D4A24492AF1007D37A0 /* ProtocolBuffer.framework in Frameworks */,
 				6E3FB73D2444173A00A343FE /* Sentry.framework in Frameworks */,
 				6E3FB753244659C500A343FE /* Squirrel.framework in Frameworks */,
 				6E8F7F54244964F9000FBC83 /* ScriptingBridge.framework in Frameworks */,
+				6E6BF6C0245030AE00702DE0 /* PDFKit.framework in Frameworks */,
 				6E3FB73024437B3600A343FE /* DNLoginServiceKit.framework in Frameworks */,
+				6E6BF6BA24502FA900702DE0 /* MediaRemote.framework in Frameworks */,
 				6E3FB751244659C400A343FE /* Mantle.framework in Frameworks */,
+				6E6BF6B724502D4100702DE0 /* PrivateMediaRemote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,8 +186,6 @@
 				6E0423772439F6AF00E113F4 /* Info.plist */,
 				6E0423782439F6AF00E113F4 /* main.m */,
 				6E0423742439F6AF00E113F4 /* Main.xib */,
-				6E052D4C24492B33007D37A0 /* ProtocolBuffer.h */,
-				6E0423F0243B124000E113F4 /* MediaRemote.h */,
 				6E8F7F59244973FE000FBC83 /* Constants.h */,
 				6E8F7F58244973FE000FBC83 /* Constants.mm */,
 				6E3FB6E52441832A00A343FE /* UserDefaultsKeys.h */,
@@ -213,9 +217,10 @@
 		6E0423E8243A437700E113F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E6BF6BF245030AE00702DE0 /* PDFKit.framework */,
+				6E6BF6B924502FA900702DE0 /* MediaRemote.framework */,
+				6E376BA2245027E3005528CF /* PrivateMediaRemote.framework */,
 				6E052D4E244935CB007D37A0 /* ScriptingBridge.framework */,
-				6E052D4924492AF1007D37A0 /* ProtocolBuffer.framework */,
-				6E0423E9243A437700E113F4 /* MediaRemote.framework */,
 				6E3FB7452446592400A343FE /* ReactiveCocoa.framework */,
 				6E3FB7492446593700A343FE /* Squirrel.framework */,
 				6E3FB7472446592D00A343FE /* Mantle.framework */,
@@ -267,6 +272,8 @@
 				6E3FB6EC2441920F00A343FE /* PreferencesCheckbox.m */,
 				6E3FB6EE2441A69900A343FE /* PreferencesPopUpButton.h */,
 				6E3FB6EF2441A69900A343FE /* PreferencesPopUpButton.m */,
+				6E6BF6BC2450301B00702DE0 /* LicenseView.h */,
+				6E6BF6BD2450301B00702DE0 /* LicenseView.m */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -415,6 +422,7 @@
 				6E3FB6F02441A69900A343FE /* PreferencesPopUpButton.m in Sources */,
 				6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */,
 				6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */,
+				6E6BF6BE2450301B00702DE0 /* LicenseView.m in Sources */,
 				6E0423F6243B691700E113F4 /* NSImage+ProportionalScaling.m in Sources */,
 				6E3FB6EA24418BD900A343FE /* GeneralPreferencesTabPageViewController.m in Sources */,
 				6E0423EF243B086B00E113F4 /* Button.m in Sources */,
@@ -568,6 +576,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Private\\ Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -578,10 +587,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimitarnestorov.MusicBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = Debug;
 		};
@@ -599,6 +604,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
+					"$(PROJECT_DIR)/Carthage/Private\\ Frameworks",
 				);
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -609,10 +615,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimitarnestorov.MusicBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
-				);
 			};
 			name = Release;
 		};

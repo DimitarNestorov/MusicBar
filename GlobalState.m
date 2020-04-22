@@ -1,7 +1,5 @@
+#import <PrivateMediaRemote/PrivateMediaRemote.h>
 #import <ScriptingBridge/ScriptingBridge.h>
-
-#import "ProtocolBuffer.h"
-#import "MediaRemote.h"
 
 #import "GlobalState.h"
 
@@ -22,12 +20,17 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
     .isPlayingDidChange = @"IsPlayingDidChangeNotification",
 };
 
-@implementation GlobalState {
-    SpotifyApplication * _Nullable spotifyApp;
-    SBApplication * _Nullable tidalApp;
-}
+@interface GlobalState (Private)
 
-- (void)initialize {
+- (void)appDidChange:(NSNotification *)notification;
+- (void)infoDidChange:(NSNotification *)notification;
+- (void)isPlayingDidChange:(NSNotification *)notification;
+
+- (void)getNowPlayingInfo;
+
+@end
+
+static void commonInit(GlobalState *self) {
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(appDidChange:)
                                                name:kMRMediaRemoteNowPlayingApplicationDidChangeNotification
@@ -49,6 +52,11 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
     });
 
     [self getNowPlayingInfo];
+}
+
+@implementation GlobalState {
+    SpotifyApplication * _Nullable spotifyApp;
+    SBApplication * _Nullable tidalApp;
 }
 
 - (NSImage * _Nullable)getAlbumArtworkFromSpotify {
@@ -87,7 +95,6 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
             _MRNowPlayingClientProtobuf *client = [[_MRNowPlayingClientProtobuf alloc] initWithData:[info objectForKey:kMRMediaRemoteNowPlayingInfoClientPropertiesData]];
             NSData *mediaRemoteArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
             NSString *albumArtworkChecksum = mediaRemoteArtwork == nil ? nil :[ mediaRemoteArtwork MD5];
-            NSLog(@"%@ %@", self.albumArtworkChecksum, albumArtworkChecksum);
             if (self.albumArtworkChecksum != albumArtworkChecksum) {
                 self.albumArtwork = mediaRemoteArtwork != nil
                     ? [[NSImage alloc] initWithData:mediaRemoteArtwork]
@@ -111,7 +118,7 @@ const struct GlobalStateNotificationStruct GlobalStateNotification = {
 
 - (instancetype)init {
     self = [super init];
-    if (self) [self initialize];
+    if (self) commonInit(self);
     return self;
 }
 

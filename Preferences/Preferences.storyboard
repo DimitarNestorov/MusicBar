@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
+        <plugIn identifier="com.apple.pdfkit.ibplugin" version="16096"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +35,7 @@
                     <tabViewItems>
                         <tabViewItem label="General" identifier="" image="NSPreferencesGeneral" id="OKl-pm-Xzf"/>
                         <tabViewItem label="About" identifier="" image="NSInfo" id="OQI-xC-6J9"/>
+                        <tabViewItem label="License" image="Copyleft" id="DsC-BB-Tr3" userLabel="License"/>
                     </tabViewItems>
                     <viewControllerTransitionOptions key="transitionOptions" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="gba-RS-o9Q">
@@ -48,6 +50,7 @@
                         <outlet property="tabView" destination="gba-RS-o9Q" id="PeJ-IG-FNH"/>
                         <segue destination="aoq-ld-YGy" kind="relationship" relationship="tabItems" id="RB8-NQ-2Cj"/>
                         <segue destination="hOf-4p-afm" kind="relationship" relationship="tabItems" id="G6C-pc-lvA"/>
+                        <segue destination="Qli-Ed-XsV" kind="relationship" relationship="tabItems" id="BGj-GR-uXH"/>
                     </connections>
                 </tabViewController>
                 <customObject id="wpq-eU-sxz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -414,7 +417,7 @@
                                 <rect key="frame" x="18" y="20" width="414" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2020 Dimitar Nestorov" id="xsD-BW-Gfn">
-                                    <font key="font" metaFont="system" size="12"/>
+                                    <font key="font" metaFont="label" size="12"/>
                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -424,10 +427,30 @@
                 </viewController>
                 <customObject id="4th-Tk-F9c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="111"/>
+            <point key="canvasLocation" x="1117" y="798"/>
+        </scene>
+        <!--License-->
+        <scene sceneID="wCZ-Hp-fo6">
+            <objects>
+                <viewController title="License" id="Qli-Ed-XsV" customClass="PreferencesTabPageViewController" sceneMemberID="viewController">
+                    <view key="view" id="qsC-Tt-zfM">
+                        <rect key="frame" x="0.0" y="0.0" width="880" height="600"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <pdfView autoresizesSubviews="NO" wantsLayer="YES" appearanceType="aqua" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3or-VD-afG" customClass="LicenseView">
+                                <rect key="frame" x="0.0" y="0.0" width="880" height="600"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </pdfView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="qGT-nW-TYh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1332" y="352"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Copyleft" width="1200" height="1200"/>
         <image name="GitHub Mark Small" width="33" height="32"/>
         <image name="NSApplicationIcon" width="32" height="32"/>
         <image name="NSInfo" width="32" height="32"/>

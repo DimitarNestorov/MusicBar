@@ -8,7 +8,7 @@
 
 - (NSArray<NSToolbarItemIdentifier> *)toolbarDefaultItemIdentifiers:(NSToolbar *)toolbar {
     NSArray<NSToolbarItemIdentifier> *defaultItems = [super toolbarDefaultItemIdentifiers:toolbar];
-    return @[[defaultItems objectAtIndex:0], NSToolbarFlexibleSpaceItemIdentifier, [defaultItems objectAtIndex:1]];
+    return @[[defaultItems objectAtIndex:0], NSToolbarFlexibleSpaceItemIdentifier, [defaultItems objectAtIndex:2], [defaultItems objectAtIndex:1]];
 }
 
 @end
