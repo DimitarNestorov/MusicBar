@@ -6,7 +6,7 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         __block BOOL shouldSend = NO;
-        [SentrySDK initWithOptions:@{
+        [SentrySDK startWithOptions:@{
             @"dsn": [NSBundle.mainBundle.infoDictionary objectForKey:@"MBSentryDSN"],
             @"beforeSend": ^(SentryEvent *event) {
                 if (shouldSend) return event;
