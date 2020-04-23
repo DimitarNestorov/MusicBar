@@ -1,7 +1,7 @@
 @import Cocoa;
 @import Sentry;
 
-#import "UserDefaultsKeys.h"
+#import "Constants.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {

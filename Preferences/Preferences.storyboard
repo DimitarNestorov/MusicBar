@@ -171,19 +171,24 @@
                                         <customView key="contentView" translatesAutoresizingMaskIntoConstraints="NO" id="dd6-ht-wPi">
                                             <rect key="frame" x="184" y="187" width="227" height="25"/>
                                             <subviews>
-                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y5e-cP-g20" customClass="PreferencesPopUpButton">
+                                                <popUpButton verticalHuggingPriority="750" id="Y5e-cP-g20" customClass="PreferencesPopUpButton">
                                                     <rect key="frame" x="-2" y="-1" width="73" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <popUpButtonCell key="cell" type="push" title="♫" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="TS3-s7-Abd" id="3bt-bE-dbq">
+                                                    <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="z1j-Xi-vTK" id="3bt-bE-dbq">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="musicbar"/>
                                                         <menu key="menu" id="4NC-ER-e93">
                                                             <items>
                                                                 <menuItem title="None" id="z1j-Xi-vTK"/>
-                                                                <menuItem title="♩" id="Oig-px-GU2"/>
-                                                                <menuItem title="♪" id="zWp-a0-jIM"/>
-                                                                <menuItem title="♫" state="on" id="TS3-s7-Abd"/>
-                                                                <menuItem title="♬" id="hPy-Yi-1UY"/>
+                                                                <menuItem title="" state="on" identifier="icon-play-1" id="9zC-4v-ZVT"/>
+                                                                <menuItem title="" identifier="icon-play-circled" id="4Z2-ny-wUe"/>
+                                                                <menuItem title="" identifier="icon-play-circled2" id="GDE-NB-akx"/>
+                                                                <menuItem title="" identifier="icon-ipod" id="phf-pj-B6y"/>
+                                                                <menuItem title="" identifier="icon-headphones-1" id="wG7-qE-K0g"/>
+                                                                <menuItem title="" identifier="icon-headphones-2" id="1ms-Je-GmI"/>
+                                                                <menuItem title="" identifier="icon-music" id="maR-qG-ERb"/>
+                                                                <menuItem title="" identifier="icon-note" id="Ubn-S5-0Wf"/>
+                                                                <menuItem title="" identifier="icon-note-beamed" id="uoB-jk-S7i"/>
                                                             </items>
                                                         </menu>
                                                         <connections>
@@ -216,14 +221,19 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QfW-nJ-ZMs" id="hlo-6Z-FL3">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="musicbar"/>
                                                         <menu key="menu" id="bp1-VO-4YF">
                                                             <items>
                                                                 <menuItem title="None" state="on" id="QfW-nJ-ZMs"/>
-                                                                <menuItem title="♩" id="QHP-aO-Gju"/>
-                                                                <menuItem title="♪" id="Xxq-3c-buE"/>
-                                                                <menuItem title="♫" id="zSt-Kq-ziM"/>
-                                                                <menuItem title="♬" id="x4T-ct-WTq"/>
+                                                                <menuItem title="" identifier="icon-play-1 2" id="47T-JT-o2C"/>
+                                                                <menuItem title="" identifier="icon-play-circled 2" id="bCZ-UV-ZrM"/>
+                                                                <menuItem title="" identifier="icon-play-circled2 2" id="xZo-oY-cBr"/>
+                                                                <menuItem title="" identifier="icon-ipod 2" id="7Eg-gm-jaP"/>
+                                                                <menuItem title="" identifier="icon-headphones-1 2" id="ban-ie-3jj"/>
+                                                                <menuItem title="" identifier="icon-headphones-2 2" id="YUv-Iv-dve"/>
+                                                                <menuItem title="" identifier="icon-music 2" id="kMj-xN-Zvv"/>
+                                                                <menuItem title="" identifier="icon-note 2" id="ZMP-XY-50z"/>
+                                                                <menuItem title="" identifier="icon-note-beamed 2" id="lDx-u6-1lw"/>
                                                             </items>
                                                         </menu>
                                                     </popUpButtonCell>
@@ -417,7 +427,7 @@
                                 <rect key="frame" x="18" y="20" width="414" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2020 Dimitar Nestorov" id="xsD-BW-Gfn">
-                                    <font key="font" metaFont="label" size="12"/>
+                                    <font key="font" metaFont="controlContent"/>
                                     <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

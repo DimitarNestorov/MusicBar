@@ -2,6 +2,12 @@
 
 [![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://github.com/dimitarnestorov/MusicBar/blob/master/LICENSE)
 
+## Get MusicBar
+
+[Download the latest release](https://github.com/dimitarnestorov/MusicBar/releases/latest/download/MusicBar.zip)
+
+ macOS 10.12 or later required
+
 ## Player Support
 
 Every player that supports the Now Playing Today widget is supported. If the player doesn't support album artwork in the widget (shows the player icon) then MusicBar doesn't support it either (with some exceptions).

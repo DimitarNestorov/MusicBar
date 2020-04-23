@@ -1,11 +1,11 @@
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 extern const struct GlobalStateNotificationStruct {
     NSString * _Nonnull infoDidChange;
     NSString * _Nonnull isPlayingDidChange;
 } GlobalStateNotification;
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface GlobalState : NSObject
 

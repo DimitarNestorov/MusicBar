@@ -2,7 +2,7 @@
 
 #import "GeneralPreferencesTabPageViewController.h"
 
-#import "UserDefaultsKeys.h"
+#import "Constants.h"
 
 #import "PreferencesCheckbox.h"
 #import "PreferencesPopUpButton.h"
