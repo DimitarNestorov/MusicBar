@@ -1,3 +1,4 @@
 Fastfile linguist-vendored=true
 Gemfile* linguist-vendored=true
+*.rb linguist-vendored=true
 *.sh linguist-vendored=true

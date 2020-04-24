@@ -16,7 +16,7 @@ platform :mac do
       org_slug: "musicbar",
       project_slug: "mac",
       dsym_path: './MusicBar.app.dSYM.zip',
-      info_plist: './Info.plist',
+      info_plist: './Configuration/Info.plist',
     )
   end
 end

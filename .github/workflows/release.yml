@@ -1,11 +1,11 @@
-name: release
+name: Release macOS App
 on:
   push:
     tags:
       - '[0-9]+.[0-9]+.[0-9]+'
       - '[0-9]+.[0-9]+.[0-9]+-beta.[0-9]+'
 jobs:
-  deploy:
+  relase:
     runs-on: macos-latest
     steps:
     - name: Checkout
@@ -18,8 +18,8 @@ jobs:
       uses: actions/cache@v1
       id: carthage-cache
       with:
-        path: Carthage
-        key: ${{ runner.os }}-carthage-${{ hashFiles('**/Cartfile.resolved') }}
+        path: macos/Carthage
+        key: ${{ runner.os }}-carthage-${{ hashFiles('macos/Cartfile.resolved') }}
         restore-keys: |
           ${{ runner.os }}-carthage-
 
@@ -32,8 +32,8 @@ jobs:
       uses: actions/cache@v1
       id: bundle-cache
       with:
-        path: bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        path: macos/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('macos/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gems-
 
@@ -45,16 +45,17 @@ jobs:
 
     - name: Build
       env:
+        GIT_REF: ${{ github.ref }}
         SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
         SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
         APPLE_ID_EMAIL: ${{ secrets.APPLE_ID_EMAIL }}
         FASTLANE_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
       run: |
-        ./.github/scripts/generateConfigFromEnv.sh
         cd macos
         curl -sL https://sentry.io/get-cli/ | bash
         bundle config path bundle
         bundle install --jobs 4 --retry 3
+        bundle exec ruby ../.github/scripts/setup_build.rb
         bundle exec fastlane release
         zip -r MusicBar.zip MusicBar.app
 
@@ -79,7 +80,10 @@ jobs:
         asset_name: MusicBar.zip
         asset_content_type: application/zip
 
-    - name: Publish auto update release
-      if: contains(github.ref, '-beta') == false
+    - name: Publish update
+      env:
+        GIT_REF: ${{ github.ref }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Provided
       run: |
-        ./.github/scripts/publishAutoUpdate.sh ${{ github.ref }} ${{ secrets.GITHUB_TOKEN }}
+        cd macos
+        bundle exec ruby ../.github/scripts/publish_update.rb

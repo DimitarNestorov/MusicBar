@@ -27,8 +27,6 @@
 		6E3FB73124437B3600A343FE /* DNLoginServiceKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E3FB73D2444173A00A343FE /* Sentry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7392443858900A343FE /* Sentry.framework */; };
 		6E3FB73E2444173A00A343FE /* Sentry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7392443858900A343FE /* Sentry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6E3FB74F244659C300A343FE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7452446592400A343FE /* ReactiveCocoa.framework */; };
-		6E3FB750244659C300A343FE /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7452446592400A343FE /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E3FB751244659C400A343FE /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7472446592D00A343FE /* Mantle.framework */; };
 		6E3FB752244659C400A343FE /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7472446592D00A343FE /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6E3FB753244659C500A343FE /* Squirrel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E3FB7492446593700A343FE /* Squirrel.framework */; };
@@ -52,6 +50,10 @@
 		6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81930224412A5000879AEE /* PreferencesTabPageViewController.m */; };
 		6E8F7F54244964F9000FBC83 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E052D4E244935CB007D37A0 /* ScriptingBridge.framework */; };
 		6E8F7F5A244973FE000FBC83 /* Constants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F7F58244973FE000FBC83 /* Constants.mm */; };
+		6EB380802453988B00307E8C /* CustomMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3807F2453988B00307E8C /* CustomMutableURLRequest.m */; };
+		6EB3808324539BBF00307E8C /* NSString+GetMusicBarVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3808224539BBF00307E8C /* NSString+GetMusicBarVersion.m */; };
+		6EB380892453AF6900307E8C /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB380882453AF6900307E8C /* ReactiveCocoa.framework */; };
+		6EB3808A2453AF6900307E8C /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB380882453AF6900307E8C /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -62,9 +64,9 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6E3FB73124437B3600A343FE /* DNLoginServiceKit.framework in Embed Frameworks */,
+				6EB3808A2453AF6900307E8C /* ReactiveCocoa.framework in Embed Frameworks */,
 				6E3FB752244659C400A343FE /* Mantle.framework in Embed Frameworks */,
 				6E3FB754244659C500A343FE /* Squirrel.framework in Embed Frameworks */,
-				6E3FB750244659C300A343FE /* ReactiveCocoa.framework in Embed Frameworks */,
 				6E3FB73E2444173A00A343FE /* Sentry.framework in Embed Frameworks */,
 				6E6BF6B824502D4100702DE0 /* PrivateMediaRemote.framework in Embed Frameworks */,
 			);
@@ -123,7 +125,6 @@
 		6E3FB73B2443859500A343FE /* Sentry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Sentry.framework.dSYM; path = Carthage/Build/Mac/Sentry.framework.dSYM; sourceTree = "<group>"; };
 		6E3FB743244438B900A343FE /* Configuration/Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration/Config.xcconfig; sourceTree = "<group>"; };
 		6E3FB744244438FC00A343FE /* Configuration/ConfigExample.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration/ConfigExample.xcconfig; sourceTree = "<group>"; };
-		6E3FB7452446592400A343FE /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		6E3FB7472446592D00A343FE /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/Mac/Mantle.framework; sourceTree = "<group>"; };
 		6E3FB7492446593700A343FE /* Squirrel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Squirrel.framework; path = Carthage/Build/Mac/Squirrel.framework; sourceTree = "<group>"; };
 		6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Squirrel.framework.dSYM; path = Carthage/Build/Mac/Squirrel.framework.dSYM; sourceTree = "<group>"; };
@@ -158,6 +159,13 @@
 		6E8F7F53244963D4000FBC83 /* Configuration/MusicBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Configuration/MusicBar.entitlements; sourceTree = "<group>"; };
 		6E8F7F58244973FE000FBC83 /* Constants.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Constants.mm; sourceTree = "<group>"; };
 		6E8F7F59244973FE000FBC83 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		6EB3807E2453988B00307E8C /* CustomMutableURLRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomMutableURLRequest.h; sourceTree = "<group>"; };
+		6EB3807F2453988B00307E8C /* CustomMutableURLRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomMutableURLRequest.m; sourceTree = "<group>"; };
+		6EB3808124539BBF00307E8C /* NSString+GetMusicBarVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GetMusicBarVersion.h"; sourceTree = "<group>"; };
+		6EB3808224539BBF00307E8C /* NSString+GetMusicBarVersion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GetMusicBarVersion.m"; sourceTree = "<group>"; };
+		6EB380882453AF6900307E8C /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		6EB3808B2453AF9D00307E8C /* PrivateMediaRemote.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PrivateMediaRemote.framework.dSYM; path = Carthage/Build/Mac/PrivateMediaRemote.framework.dSYM; sourceTree = "<group>"; };
+		6EB3808C2453AFB900307E8C /* PrivateProtocolBuffer.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PrivateProtocolBuffer.framework.dSYM; path = Carthage/Build/Mac/PrivateProtocolBuffer.framework.dSYM; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +173,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E3FB74F244659C300A343FE /* ReactiveCocoa.framework in Frameworks */,
 				6E3FB73D2444173A00A343FE /* Sentry.framework in Frameworks */,
 				6E3FB753244659C500A343FE /* Squirrel.framework in Frameworks */,
 				6E8F7F54244964F9000FBC83 /* ScriptingBridge.framework in Frameworks */,
@@ -173,6 +180,7 @@
 				6E3FB73024437B3600A343FE /* DNLoginServiceKit.framework in Frameworks */,
 				6E6BF6BA24502FA900702DE0 /* MediaRemote.framework in Frameworks */,
 				6E3FB751244659C400A343FE /* Mantle.framework in Frameworks */,
+				6EB380892453AF6900307E8C /* ReactiveCocoa.framework in Frameworks */,
 				6E6BF6B724502D4100702DE0 /* PrivateMediaRemote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +209,8 @@
 				6E0423FB243D240D00E113F4 /* GlobalState.m */,
 				6E04236F2439F6AE00E113F4 /* AppDelegate.h */,
 				6E0423702439F6AE00E113F4 /* AppDelegate.m */,
+				6EB3807E2453988B00307E8C /* CustomMutableURLRequest.h */,
+				6EB3807F2453988B00307E8C /* CustomMutableURLRequest.m */,
 				6E0423C1243A37FA00E113F4 /* PopoverViewController.h */,
 				6E0423C2243A37FA00E113F4 /* PopoverViewController.mm */,
 				6E6BF6FC245157F500702DE0 /* product-hunt-logo-orange-240.png */,
@@ -223,7 +233,7 @@
 				6E6BF6B924502FA900702DE0 /* MediaRemote.framework */,
 				6E376BA2245027E3005528CF /* PrivateMediaRemote.framework */,
 				6E052D4E244935CB007D37A0 /* ScriptingBridge.framework */,
-				6E3FB7452446592400A343FE /* ReactiveCocoa.framework */,
+				6EB380882453AF6900307E8C /* ReactiveCocoa.framework */,
 				6E3FB7492446593700A343FE /* Squirrel.framework */,
 				6E3FB7472446592D00A343FE /* Mantle.framework */,
 				6E3FB7392443858900A343FE /* Sentry.framework */,
@@ -243,6 +253,8 @@
 				6E04241C243D44CC00E113F4 /* NSString+FormatTime.mm */,
 				6E376A5B244E54B7005528CF /* NSData+MD5.h */,
 				6E376A5C244E54B7005528CF /* NSData+MD5.m */,
+				6EB3808124539BBF00307E8C /* NSString+GetMusicBarVersion.h */,
+				6EB3808224539BBF00307E8C /* NSString+GetMusicBarVersion.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -254,6 +266,8 @@
 				6E3FB74B2446596300A343FE /* Squirrel.framework.dSYM */,
 				6E3FB73B2443859500A343FE /* Sentry.framework.dSYM */,
 				6E3FB73624437D4900A343FE /* DNLoginServiceKit.framework.dSYM */,
+				6EB3808C2453AFB900307E8C /* PrivateProtocolBuffer.framework.dSYM */,
+				6EB3808B2453AF9D00307E8C /* PrivateMediaRemote.framework.dSYM */,
 			);
 			name = Symbols;
 			sourceTree = "<group>";
@@ -428,6 +442,7 @@
 				6E3FB6F02441A69900A343FE /* PreferencesPopUpButton.m in Sources */,
 				6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */,
 				6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */,
+				6EB380802453988B00307E8C /* CustomMutableURLRequest.m in Sources */,
 				6E6BF70B2452F58C00702DE0 /* WelcomeViewController.m in Sources */,
 				6E6BF6BE2450301B00702DE0 /* LicenseView.m in Sources */,
 				6E6BF70E2452F86100702DE0 /* AutomaticUpdatesViewController.m in Sources */,
@@ -444,6 +459,7 @@
 				6E0423C3243A37FA00E113F4 /* PopoverViewController.mm in Sources */,
 				6E376A5D244E54B7005528CF /* NSData+MD5.m in Sources */,
 				6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */,
+				6EB3808324539BBF00307E8C /* NSString+GetMusicBarVersion.m in Sources */,
 				6E0423712439F6AE00E113F4 /* AppDelegate.m in Sources */,
 				6E0423FC243D240D00E113F4 /* GlobalState.m in Sources */,
 			);
@@ -594,7 +610,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimitarnestorov.MusicBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -623,7 +639,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimitarnestorov.MusicBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

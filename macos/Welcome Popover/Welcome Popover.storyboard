@@ -3,7 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,15 +47,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" inset="2" id="B4p-Ty-MiT">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="15"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                            <color key="value" name="Welcome Popover Blue"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </buttonCell>
                                 <connections>
                                     <action selector="nextAction:" target="S9l-QP-p3u" id="g28-2g-um3"/>
@@ -88,7 +83,7 @@ DQ
                                 </gestureRecognizers>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Install Updates Manually" id="wkM-32-ed9">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="Welcome Popover Blue"/>
+                                    <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -130,7 +125,7 @@ DQ
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Install Updates Automatically" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="gUH-Cd-OP3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="15"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
@@ -184,7 +179,7 @@ DQ
                                 </gestureRecognizers>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Don't Share" id="y9T-7g-Ec1">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="Welcome Popover Blue"/>
+                                    <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -198,15 +193,10 @@ DQ
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Share" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="9R3-Xt-uAo">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="15"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                            <color key="value" name="Welcome Popover Blue"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </buttonCell>
                                 <connections>
                                     <action selector="enableErrorReportingAction:" target="ZWB-VV-fVF" id="UG0-lV-h2a"/>
@@ -257,7 +247,7 @@ DQ
                                 </gestureRecognizers>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Skip" id="gi2-aV-HZY">
                                     <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="Welcome Popover Blue"/>
+                                    <color key="textColor" name="controlAccentColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
@@ -266,15 +256,10 @@ DQ
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <buttonCell key="cell" type="push" title="Launch at Login" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="DnC-Ky-dcn">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="label" size="15"/>
+                                    <font key="font" metaFont="system" size="15"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
 DQ
 </string>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                                            <color key="value" name="Welcome Popover Blue"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
                                 </buttonCell>
                                 <connections>
                                     <action selector="enableLaunchAtLoginAction:" target="kiP-ua-IsL" id="Isr-nH-phU"/>
@@ -297,8 +282,5 @@ DQ
         <image name="Bug" width="1200" height="1200"/>
         <image name="Home" width="1200" height="1200"/>
         <image name="Update" width="1200" height="1200"/>
-        <namedColor name="Welcome Popover Blue">
-            <color red="0.039000000804662704" green="0.51800000667572021" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

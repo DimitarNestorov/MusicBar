@@ -5,6 +5,10 @@
 
 #import "AppDelegate.h"
 
+#import "NSString+GetMusicBarVersion.h"
+
+#import "CustomMutableURLRequest.h"
+
 #import "Constants.h"
 
 #import "GlobalState.h"
@@ -109,14 +113,12 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
 - (void)turnOnAutomaticUpdates {
 #ifndef DEBUG
     if (self.updater != nil) return;
-        
-    NSURLComponents *components = [[NSURLComponents alloc] init];
-
-    components.scheme = @"https";
-    components.host = @"raw.githubusercontent.com";
-    components.path = @"/dimitarnestorov/MusicBar/update/stable.json";
     
-    self.updater = [[SQRLUpdater alloc] initWithUpdateRequest:[NSURLRequest requestWithURL:components.URL] forVersion:[NSBundle.mainBundle.infoDictionary objectForKey:@"CFBundleShortVersionString"]];
+    NSString *version = [NSString getMusicBarVersionFor:UpdatesVersionUseCase];
+    NSString *updateInfoURL = [@"stable" isEqualToString:version] ? @"https://raw.githubusercontent.com/dimitarnestorov/MusicBar/update/stable.json" : [NSString stringWithFormat:@"https://api.github.com/repos/dimitarnestorov/MusicBar/contents/%@.json?ref=update", version];
+    CustomMutableURLRequest *urlRequest = [CustomMutableURLRequest requestWithURL:[NSURL URLWithString:updateInfoURL]];
+    NSString *buildVersion = [NSBundle.mainBundle.infoDictionary objectForKey:@"CFBundleVersion"];
+    self.updater = [[SQRLUpdater alloc] initWithUpdateRequest:urlRequest forVersion:buildVersion];
 
     if (@available(macOS 10.14, *)) {
         void (^completionHandler)(BOOL, NSError * _Nullable) = ^(BOOL granted, NSError * _Nullable error) {
