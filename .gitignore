@@ -21,15 +21,18 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-Carthage/Checkouts/
-Carthage/Build/
+macos/Carthage/Checkouts/
+macos/Carthage/Build/
 
 Config.xcconfig
 
 
-fastlane/README.md
-fastlane/report.xml
+macos/fastlane/README.md
+macos/fastlane/report.xml
 
-MusicBar.app/
+macos/MusicBar.app/
 MusicBar.app.dSYM.zip
 MusicBar.zip
+
+# Finder
+Icon

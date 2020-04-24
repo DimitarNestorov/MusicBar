@@ -1,7 +1,5 @@
 # MusicBar
 
-[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://github.com/dimitarnestorov/MusicBar/blob/master/LICENSE)
-
 ## Get MusicBar
 
 [Download the latest release](https://github.com/dimitarnestorov/MusicBar/releases/latest/download/MusicBar.zip)
@@ -31,6 +29,14 @@ Every player that supports the Now Playing Today widget is supported. If the pla
 1. Working on a solution
 1. Waiting for https://github.com/auryo/electron-media-service/pull/1 to be merged
 1. Requires media keys to be enabled
+
+## Feature requests
+
+Issues labeled with [feature request](https://github.com/dimitarnestorov/MusicBar/labels/feature%20request) that have the most 👍 reactions will be prioritized.
+
+## Credits
+
+MusicBar is heavily inspired from [SpotMenu](https://github.com/kmikiy/SpotMenu) which is a combination of [TrayPlay](https://github.com/mborgerson/TrayPlay) and [Statusfy](https://github.com/paulyoung/Statusfy).
 
 ## License
 

@@ -174,13 +174,13 @@
                                                 <popUpButton verticalHuggingPriority="750" id="Y5e-cP-g20" customClass="PreferencesPopUpButton">
                                                     <rect key="frame" x="-2" y="-1" width="73" height="25"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="z1j-Xi-vTK" id="3bt-bE-dbq">
+                                                    <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="z1j-Xi-vTK" id="3bt-bE-dbq">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" size="13" name="musicbar"/>
                                                         <menu key="menu" id="4NC-ER-e93">
                                                             <items>
-                                                                <menuItem title="None" id="z1j-Xi-vTK"/>
-                                                                <menuItem title="" state="on" identifier="icon-play-1" id="9zC-4v-ZVT"/>
+                                                                <menuItem title="None" state="on" id="z1j-Xi-vTK"/>
+                                                                <menuItem title="" identifier="icon-play-1" id="9zC-4v-ZVT"/>
                                                                 <menuItem title="" identifier="icon-play-circled" id="4Z2-ny-wUe"/>
                                                                 <menuItem title="" identifier="icon-play-circled2" id="GDE-NB-akx"/>
                                                                 <menuItem title="" identifier="icon-ipod" id="phf-pj-B6y"/>
@@ -403,7 +403,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSG-AK-ts8">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QSG-AK-ts8" customClass="VersionLabel">
                                 <rect key="frame" x="96" y="57" width="234" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0" id="f18-KQ-BEn">
@@ -447,7 +447,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="880" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <pdfView autoresizesSubviews="NO" wantsLayer="YES" appearanceType="aqua" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3or-VD-afG" customClass="LicenseView">
+                            <pdfView autoresizesSubviews="NO" wantsLayer="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3or-VD-afG" customClass="LicenseView">
                                 <rect key="frame" x="0.0" y="0.0" width="880" height="600"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </pdfView>

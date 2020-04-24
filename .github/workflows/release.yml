@@ -26,7 +26,7 @@ jobs:
     - name: Carthage install
       if: steps.carthage-cache.outputs.cache-hit != 'true'
       run: |
-        carthage bootstrap --no-use-binaries --platform macOS --cache-builds
+        (cd macos && carthage bootstrap --no-use-binaries --platform macOS --cache-builds)
 
     - name: Bundle cache
       uses: actions/cache@v1
@@ -51,6 +51,7 @@ jobs:
         FASTLANE_PASSWORD: ${{ secrets.APPLE_ID_PASSWORD }}
       run: |
         ./.github/scripts/generateConfigFromEnv.sh
+        cd macos
         curl -sL https://sentry.io/get-cli/ | bash
         bundle config path bundle
         bundle install --jobs 4 --retry 3
@@ -74,7 +75,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Provided
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./MusicBar.zip
+        asset_path: ./macos/MusicBar.zip
         asset_name: MusicBar.zip
         asset_content_type: application/zip
 

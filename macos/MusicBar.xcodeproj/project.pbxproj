@@ -40,6 +40,7 @@
 		6E6BF6C0245030AE00702DE0 /* PDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6BF6BF245030AE00702DE0 /* PDFKit.framework */; };
 		6E6BF6FD245157F500702DE0 /* product-hunt-logo-orange-240.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BF6FC245157F500702DE0 /* product-hunt-logo-orange-240.png */; };
 		6E6BF6FF24515C7800702DE0 /* musicbar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BF6FE24515C7800702DE0 /* musicbar.ttf */; };
+		6E6BF7022452B0AB00702DE0 /* VersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF7012452B0AB00702DE0 /* VersionLabel.m */; };
 		6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192F5243E94A100879AEE /* ProgressContainerView.m */; };
 		6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8192F92440EEAD00879AEE /* Preferences.storyboard */; };
 		6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192FF2441271200879AEE /* PreferencesTabViewController.m */; };
@@ -129,6 +130,8 @@
 		6E6BF6BF245030AE00702DE0 /* PDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PDFKit.framework; path = System/Library/Frameworks/PDFKit.framework; sourceTree = SDKROOT; };
 		6E6BF6FC245157F500702DE0 /* product-hunt-logo-orange-240.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "product-hunt-logo-orange-240.png"; path = "Assets.xcassets/product-hunt-logo-orange-240.png"; sourceTree = "<group>"; };
 		6E6BF6FE24515C7800702DE0 /* musicbar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = musicbar.ttf; path = Assets.xcassets/musicbar.ttf; sourceTree = "<group>"; };
+		6E6BF7002452B0AB00702DE0 /* VersionLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionLabel.h; sourceTree = "<group>"; };
+		6E6BF7012452B0AB00702DE0 /* VersionLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionLabel.m; sourceTree = "<group>"; };
 		6E8192F4243E94A100879AEE /* ProgressContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressContainerView.h; sourceTree = "<group>"; };
 		6E8192F5243E94A100879AEE /* ProgressContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressContainerView.m; sourceTree = "<group>"; };
 		6E8192F92440EEAD00879AEE /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				6E3FB6EF2441A69900A343FE /* PreferencesPopUpButton.m */,
 				6E6BF6BC2450301B00702DE0 /* LicenseView.h */,
 				6E6BF6BD2450301B00702DE0 /* LicenseView.m */,
+				6E6BF7002452B0AB00702DE0 /* VersionLabel.h */,
+				6E6BF7012452B0AB00702DE0 /* VersionLabel.m */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				6E6BF6BE2450301B00702DE0 /* LicenseView.m in Sources */,
 				6E0423F6243B691700E113F4 /* NSImage+ProportionalScaling.m in Sources */,
 				6E3FB6EA24418BD900A343FE /* GeneralPreferencesTabPageViewController.m in Sources */,
+				6E6BF7022452B0AB00702DE0 /* VersionLabel.m in Sources */,
 				6E0423EF243B086B00E113F4 /* Button.m in Sources */,
 				6E0423BD243A1A8C00E113F4 /* ControlsView.m in Sources */,
 				6E3FB6ED2441920F00A343FE /* PreferencesCheckbox.m in Sources */,

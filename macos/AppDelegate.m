@@ -214,8 +214,8 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
             UNNotificationRequest *request = [UNNotificationRequest requestWithIdentifier:identifier content:content trigger:nil];
             [UNUserNotificationCenter.currentNotificationCenter addNotificationRequest:request
                                                                  withCompletionHandler:handleError];
+            [self.userDefaults setBool:YES forKey:ProductHuntNotificationDisplayedUserDefaultsKey];
         }];
-        [self.userDefaults setBool:YES forKey:ProductHuntNotificationDisplayedUserDefaultsKey];
     };
     [[NSURLSession.sharedSession dataTaskWithRequest:request completionHandler:completionHandler] resume];
 }
