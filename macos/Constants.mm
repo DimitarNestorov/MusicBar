@@ -14,6 +14,9 @@ NSString *MaximumWidthUserDefaultsKey = @"MBMaximumWidth";
 NSString *EnableErrorReportingUserDefaultsKey = @"MBEnableErrorReporting";
 NSString *EnableAutomaticUpdatesUserDefaultsKey = @"MBEnableAutomaticUpdates";
 NSString *ProductHuntNotificationDisplayedUserDefaultsKey = @"MBProductHuntNotificationDisplayedUserDefaultsKey";
+NSString *SetupCompletedUserDefaultsKey = @"MBSetupCompletedUserDefaultsKey";
+
+NSString *SetupCompletedNotificationName = @"MBSetupCompleted";
 
 NSFont *StatusItemIconFont = [NSFont fontWithName:@"musicbar" size:14.0f];
 NSFont *StatusItemTextFont = [NSFont systemFontOfSize:14.0f];

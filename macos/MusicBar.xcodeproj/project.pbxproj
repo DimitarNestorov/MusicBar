@@ -41,6 +41,11 @@
 		6E6BF6FD245157F500702DE0 /* product-hunt-logo-orange-240.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BF6FC245157F500702DE0 /* product-hunt-logo-orange-240.png */; };
 		6E6BF6FF24515C7800702DE0 /* musicbar.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BF6FE24515C7800702DE0 /* musicbar.ttf */; };
 		6E6BF7022452B0AB00702DE0 /* VersionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF7012452B0AB00702DE0 /* VersionLabel.m */; };
+		6E6BF7052452BE1400702DE0 /* Welcome Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6BF7042452BE1400702DE0 /* Welcome Popover.storyboard */; };
+		6E6BF70B2452F58C00702DE0 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF70A2452F58C00702DE0 /* WelcomeViewController.m */; };
+		6E6BF70E2452F86100702DE0 /* AutomaticUpdatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF70D2452F86100702DE0 /* AutomaticUpdatesViewController.m */; };
+		6E6BF7112452FA9E00702DE0 /* ErrorReportingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF7102452FA9E00702DE0 /* ErrorReportingViewController.m */; };
+		6E6BF7142452FB3800702DE0 /* LaunchAtLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6BF7132452FB3800702DE0 /* LaunchAtLoginViewController.m */; };
 		6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192F5243E94A100879AEE /* ProgressContainerView.m */; };
 		6E8192FA2440EEAD00879AEE /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E8192F92440EEAD00879AEE /* Preferences.storyboard */; };
 		6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8192FF2441271200879AEE /* PreferencesTabViewController.m */; };
@@ -111,7 +116,6 @@
 		6E3FB6EC2441920F00A343FE /* PreferencesCheckbox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesCheckbox.m; sourceTree = "<group>"; };
 		6E3FB6EE2441A69900A343FE /* PreferencesPopUpButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesPopUpButton.h; sourceTree = "<group>"; };
 		6E3FB6EF2441A69900A343FE /* PreferencesPopUpButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesPopUpButton.m; sourceTree = "<group>"; };
-		6E3FB72B244378F100A343FE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6E3FB72C2443799D00A343FE /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		6E3FB72E24437ADE00A343FE /* DNLoginServiceKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DNLoginServiceKit.framework; path = Carthage/Build/Mac/DNLoginServiceKit.framework; sourceTree = "<group>"; };
 		6E3FB73624437D4900A343FE /* DNLoginServiceKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = DNLoginServiceKit.framework.dSYM; path = Carthage/Build/Mac/DNLoginServiceKit.framework.dSYM; sourceTree = "<group>"; };
@@ -132,6 +136,15 @@
 		6E6BF6FE24515C7800702DE0 /* musicbar.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = musicbar.ttf; path = Assets.xcassets/musicbar.ttf; sourceTree = "<group>"; };
 		6E6BF7002452B0AB00702DE0 /* VersionLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionLabel.h; sourceTree = "<group>"; };
 		6E6BF7012452B0AB00702DE0 /* VersionLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionLabel.m; sourceTree = "<group>"; };
+		6E6BF7042452BE1400702DE0 /* Welcome Popover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Welcome Popover.storyboard"; sourceTree = "<group>"; };
+		6E6BF7092452F58C00702DE0 /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		6E6BF70A2452F58C00702DE0 /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		6E6BF70C2452F86100702DE0 /* AutomaticUpdatesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomaticUpdatesViewController.h; sourceTree = "<group>"; };
+		6E6BF70D2452F86100702DE0 /* AutomaticUpdatesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticUpdatesViewController.m; sourceTree = "<group>"; };
+		6E6BF70F2452FA9E00702DE0 /* ErrorReportingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ErrorReportingViewController.h; sourceTree = "<group>"; };
+		6E6BF7102452FA9E00702DE0 /* ErrorReportingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ErrorReportingViewController.m; sourceTree = "<group>"; };
+		6E6BF7122452FB3800702DE0 /* LaunchAtLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginViewController.h; sourceTree = "<group>"; };
+		6E6BF7132452FB3800702DE0 /* LaunchAtLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginViewController.m; sourceTree = "<group>"; };
 		6E8192F4243E94A100879AEE /* ProgressContainerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressContainerView.h; sourceTree = "<group>"; };
 		6E8192F5243E94A100879AEE /* ProgressContainerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressContainerView.m; sourceTree = "<group>"; };
 		6E8192F92440EEAD00879AEE /* Preferences.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
@@ -139,13 +152,8 @@
 		6E8192FF2441271200879AEE /* PreferencesTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTabViewController.m; sourceTree = "<group>"; };
 		6E81930124412A5000879AEE /* PreferencesTabPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreferencesTabPageViewController.h; sourceTree = "<group>"; };
 		6E81930224412A5000879AEE /* PreferencesTabPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreferencesTabPageViewController.m; sourceTree = "<group>"; };
-		6E887B162448F14E0011849F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		6E887B172448F14E0011849F /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 		6E887B182448F14E0011849F /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		6E887B192448F14E0011849F /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
-		6E887B1C2448F14E0011849F /* release.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = release.yml; sourceTree = "<group>"; };
-		6E887B1E2448F14E0011849F /* generateConfigFromEnv.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = generateConfigFromEnv.sh; sourceTree = "<group>"; };
-		6E887B1F2448F14E0011849F /* publishAutoUpdate.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = publishAutoUpdate.sh; sourceTree = "<group>"; };
 		6E887B202448F14E0011849F /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		6E8F7F53244963D4000FBC83 /* Configuration/MusicBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Configuration/MusicBar.entitlements; sourceTree = "<group>"; };
 		6E8F7F58244973FE000FBC83 /* Constants.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = Constants.mm; sourceTree = "<group>"; };
@@ -180,10 +188,10 @@
 				6E3FB73824437D8800A343FE /* Symbols */,
 				6E04236D2439F6AE00E113F4 /* Products */,
 				6E04241A243D449400E113F4 /* Categories */,
-				6E8192FD244126E100879AEE /* Preferences */,
 				6E6BF6C124504E9400702DE0 /* Views */,
+				6E8192FD244126E100879AEE /* Preferences */,
+				6E6BF7032452BDF400702DE0 /* Welcome Popover */,
 				6E0423722439F6AF00E113F4 /* Assets.xcassets */,
-				6E3FB72B244378F100A343FE /* README.md */,
 				6E0423782439F6AF00E113F4 /* main.m */,
 				6E0423742439F6AF00E113F4 /* Main.xib */,
 				6E8F7F59244973FE000FBC83 /* Constants.h */,
@@ -263,6 +271,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6E6BF7032452BDF400702DE0 /* Welcome Popover */ = {
+			isa = PBXGroup;
+			children = (
+				6E6BF7042452BE1400702DE0 /* Welcome Popover.storyboard */,
+				6E6BF7092452F58C00702DE0 /* WelcomeViewController.h */,
+				6E6BF70A2452F58C00702DE0 /* WelcomeViewController.m */,
+				6E6BF70C2452F86100702DE0 /* AutomaticUpdatesViewController.h */,
+				6E6BF70D2452F86100702DE0 /* AutomaticUpdatesViewController.m */,
+				6E6BF70F2452FA9E00702DE0 /* ErrorReportingViewController.h */,
+				6E6BF7102452FA9E00702DE0 /* ErrorReportingViewController.m */,
+				6E6BF7122452FB3800702DE0 /* LaunchAtLoginViewController.h */,
+				6E6BF7132452FB3800702DE0 /* LaunchAtLoginViewController.m */,
+			);
+			path = "Welcome Popover";
+			sourceTree = "<group>";
+		};
 		6E8192FD244126E100879AEE /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,9 +312,6 @@
 		6E887B152448F10A0011849F /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				6E887B1A2448F14E0011849F /* .github */,
-				6E887B172448F14E0011849F /* .gitattributes */,
-				6E887B162448F14E0011849F /* .gitignore */,
 				6E3FB72C2443799D00A343FE /* Cartfile */,
 				6E887B202448F14E0011849F /* Cartfile.resolved */,
 				6E887B182448F14E0011849F /* Gemfile */,
@@ -302,32 +323,6 @@
 				6E3FB6D92441458100A343FE /* Configuration/DefaultPreferences.plist */,
 			);
 			name = Configuration;
-			sourceTree = "<group>";
-		};
-		6E887B1A2448F14E0011849F /* .github */ = {
-			isa = PBXGroup;
-			children = (
-				6E887B1B2448F14E0011849F /* workflows */,
-				6E887B1D2448F14E0011849F /* scripts */,
-			);
-			path = .github;
-			sourceTree = "<group>";
-		};
-		6E887B1B2448F14E0011849F /* workflows */ = {
-			isa = PBXGroup;
-			children = (
-				6E887B1C2448F14E0011849F /* release.yml */,
-			);
-			path = workflows;
-			sourceTree = "<group>";
-		};
-		6E887B1D2448F14E0011849F /* scripts */ = {
-			isa = PBXGroup;
-			children = (
-				6E887B1E2448F14E0011849F /* generateConfigFromEnv.sh */,
-				6E887B1F2448F14E0011849F /* publishAutoUpdate.sh */,
-			);
-			path = scripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +390,7 @@
 				6E6BF6FD245157F500702DE0 /* product-hunt-logo-orange-240.png in Resources */,
 				6E0423732439F6AF00E113F4 /* Assets.xcassets in Resources */,
 				6E6BF6FF24515C7800702DE0 /* musicbar.ttf in Resources */,
+				6E6BF7052452BE1400702DE0 /* Welcome Popover.storyboard in Resources */,
 				6E0423762439F6AF00E113F4 /* Main.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,15 +428,19 @@
 				6E3FB6F02441A69900A343FE /* PreferencesPopUpButton.m in Sources */,
 				6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */,
 				6E04241D243D44CC00E113F4 /* NSString+FormatTime.mm in Sources */,
+				6E6BF70B2452F58C00702DE0 /* WelcomeViewController.m in Sources */,
 				6E6BF6BE2450301B00702DE0 /* LicenseView.m in Sources */,
+				6E6BF70E2452F86100702DE0 /* AutomaticUpdatesViewController.m in Sources */,
 				6E0423F6243B691700E113F4 /* NSImage+ProportionalScaling.m in Sources */,
 				6E3FB6EA24418BD900A343FE /* GeneralPreferencesTabPageViewController.m in Sources */,
 				6E6BF7022452B0AB00702DE0 /* VersionLabel.m in Sources */,
 				6E0423EF243B086B00E113F4 /* Button.m in Sources */,
+				6E6BF7112452FA9E00702DE0 /* ErrorReportingViewController.m in Sources */,
 				6E0423BD243A1A8C00E113F4 /* ControlsView.m in Sources */,
 				6E3FB6ED2441920F00A343FE /* PreferencesCheckbox.m in Sources */,
 				6E0423792439F6AF00E113F4 /* main.m in Sources */,
 				6E8193002441271200879AEE /* PreferencesTabViewController.m in Sources */,
+				6E6BF7142452FB3800702DE0 /* LaunchAtLoginViewController.m in Sources */,
 				6E0423C3243A37FA00E113F4 /* PopoverViewController.mm in Sources */,
 				6E376A5D244E54B7005528CF /* NSData+MD5.m in Sources */,
 				6E8192F6243E94A100879AEE /* ProgressContainerView.m in Sources */,
@@ -581,6 +581,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GD9UG2H679;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -609,6 +610,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GD9UG2H679;
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (

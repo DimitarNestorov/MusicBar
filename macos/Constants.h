@@ -17,6 +17,9 @@ extern NSString *MaximumWidthUserDefaultsKey;
 extern NSString *EnableErrorReportingUserDefaultsKey;
 extern NSString *EnableAutomaticUpdatesUserDefaultsKey;
 extern NSString *ProductHuntNotificationDisplayedUserDefaultsKey;
+extern NSString *SetupCompletedUserDefaultsKey;
+
+extern NSString *SetupCompletedNotificationName;
 
 extern NSFont *StatusItemIconFont;
 extern NSFont *StatusItemTextFont;

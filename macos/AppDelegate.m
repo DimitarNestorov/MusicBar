@@ -50,6 +50,8 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
 @property (strong) SQRLUpdater *updater;
 @property (strong) RACDisposable *interval;
 
+@property (strong) NSPopover *welcomePopover;
+
 @end
 
 @implementation AppDelegate
@@ -256,6 +258,11 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
                                                name:NSUserDefaultsDidChangeNotification
                                              object:nil];
     
+    [NSNotificationCenter.defaultCenter addObserver:self
+                                           selector:@selector(setupCompleted:)
+                                               name:SetupCompletedNotificationName
+                                             object:nil];
+    
     [self loadUserDefaults];
     
     self.statusItem = [NSStatusBar.systemStatusBar statusItemWithLength:NSVariableStatusItemLength];
@@ -282,6 +289,13 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
             [self checkForProductHuntRelease];
         }
     }
+    
+    if (![self.userDefaults boolForKey:SetupCompletedUserDefaultsKey]) {
+        self.statusItem.button.action = nil;
+        self.welcomePopover = [NSPopover new];
+        self.welcomePopover.contentViewController = [[NSStoryboard storyboardWithName:@"Welcome Popover" bundle:nil] instantiateInitialController];
+        [self.welcomePopover showRelativeToRect:self.statusItem.button.bounds ofView:self.statusItem.button preferredEdge:NSMinYEdge];
+    }
 }
 
 - (void)applicationWillResignActive:(NSNotification *)notification {
@@ -293,6 +307,13 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
 }
 
 #pragma mark - Notification handlers
+
+- (void)setupCompleted:(NSNotification *)notification {
+    self.statusItem.button.action = @selector(showPopover:);
+    [self.welcomePopover close];
+    self.welcomePopover = nil;
+    [self.userDefaults setBool:YES forKey:SetupCompletedUserDefaultsKey];
+}
 
 - (void)userDefaultsDidChange:(NSNotification *)notification {
     if (notification != nil && notification.object == NSUserDefaults.standardUserDefaults) return;
@@ -351,6 +372,10 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
     
     self.statusItem.length = title.size.width > self.maximumWidth ? self.maximumWidth : NSVariableStatusItemLength;
     self.statusItem.button.attributedTitle = title;
+    
+    if (self.welcomePopover != nil) {
+        [self.welcomePopover showRelativeToRect:self.statusItem.button.bounds ofView:self.statusItem.button preferredEdge:NSMinYEdge];
+    }
 }
 
 #pragma mark - Actions
