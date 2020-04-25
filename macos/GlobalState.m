@@ -93,15 +93,14 @@ static void commonInit(GlobalState *self) {
             self.album = [info objectForKey:kMRMediaRemoteNowPlayingInfoAlbum];
 
             _MRNowPlayingClientProtobuf *client = [[_MRNowPlayingClientProtobuf alloc] initWithData:[info objectForKey:kMRMediaRemoteNowPlayingInfoClientPropertiesData]];
+            BOOL isSpotify = [client.bundleIdentifier isEqualToString:spotifyBundleIdentifier];
             NSData *mediaRemoteArtwork = [info objectForKey:kMRMediaRemoteNowPlayingInfoArtworkData];
-            NSString *albumArtworkChecksum = mediaRemoteArtwork == nil ? nil :[ mediaRemoteArtwork MD5];
-            if (self.albumArtworkChecksum != albumArtworkChecksum) {
-                self.albumArtwork = mediaRemoteArtwork != nil
-                    ? [[NSImage alloc] initWithData:mediaRemoteArtwork]
-                    : [client.bundleIdentifier isEqualToString:spotifyBundleIdentifier]
-                        ? [self getAlbumArtworkFromSpotify]
-                        : nil;
-                self.albumArtworkChecksum = albumArtworkChecksum;
+            NSString *albumArtworkChecksum = mediaRemoteArtwork == nil ? nil : [mediaRemoteArtwork MD5];
+            if (self.albumArtworkChecksum != albumArtworkChecksum || isSpotify) {
+                self.albumArtwork = (mediaRemoteArtwork == nil && !isSpotify) ? nil : isSpotify
+                    ? [self getAlbumArtworkFromSpotify]
+                    : [[NSImage alloc] initWithData:mediaRemoteArtwork];
+                self.albumArtworkChecksum = isSpotify ? [self.albumArtwork TIFFRepresentation].MD5 : albumArtworkChecksum;
             }
 
             self.timestamp = [info objectForKey:kMRMediaRemoteNowPlayingInfoTimestamp];
