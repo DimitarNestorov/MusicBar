@@ -372,7 +372,12 @@ void (^handleError)(NSError * _Nullable) = ^(NSError * _Nullable error) {
         }
     }
     
-    self.statusItem.length = title.size.width > self.maximumWidth ? self.maximumWidth : NSVariableStatusItemLength;
+    CGFloat padding = 10;
+    CGFloat titleWidth = ceil(title.size.width) + 2;
+    CGFloat widthWithPadding = titleWidth + padding;
+    CGFloat newWidth = widthWithPadding > self.maximumWidth ? self.maximumWidth : widthWithPadding;
+    self.statusItem.length = newWidth;
+    self.statusItem.button.frame = CGRectMake(padding / 2, 0, newWidth - padding, 22);
     self.statusItem.button.attributedTitle = title;
     
     if (self.welcomePopover != nil) {
