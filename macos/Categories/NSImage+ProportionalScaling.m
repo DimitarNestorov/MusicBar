@@ -2,7 +2,7 @@
 
 @implementation NSImage (ProportionalScaling)
 
-- (NSImage*)imageByScalingProportionallyToSize:(NSSize)targetSize {
+- (NSImage * _Nullable)imageByScalingProportionallyToSize:(NSSize)targetSize {
     NSImage* newImage = nil;
     
     if ([self isValid]) {
