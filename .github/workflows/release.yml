@@ -57,7 +57,7 @@ jobs:
         bundle install --jobs 4 --retry 3
         bundle exec ruby ../.github/scripts/setup_build.rb
         bundle exec fastlane release
-        zip -r MusicBar.zip MusicBar.app
+        zip -y -r MusicBar.zip MusicBar.app
 
     - name: Create release
       uses: actions/create-release@v1
