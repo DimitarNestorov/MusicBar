@@ -73,7 +73,7 @@ static void commonInit(GlobalState *self) {
         if (spotifyApp == nil) return nil;
     }
     SpotifyTrack *track = spotifyApp.currentTrack;
-    return [[NSImage alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:track.artworkUrl]];
+    return track.artworkUrl == nil ? nil : [[NSImage alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:track.artworkUrl]];
 }
 
 - (void)getNowPlayingInfo {
