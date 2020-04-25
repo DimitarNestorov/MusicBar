@@ -37,6 +37,7 @@
     popUpButton.userDefaultsKey = key;
     NSString *currentValue = [self.userDefaults stringForKey:key];
     [popUpButton selectItemWithTitle:currentValue.length == 0 ? @"None" : currentValue];
+    popUpButton.font = StatusItemIconFont;
 }
 
 #pragma mark - View controller

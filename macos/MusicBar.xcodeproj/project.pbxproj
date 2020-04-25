@@ -50,6 +50,7 @@
 		6E81930324412A5000879AEE /* PreferencesTabPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E81930224412A5000879AEE /* PreferencesTabPageViewController.m */; };
 		6E8F7F54244964F9000FBC83 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E052D4E244935CB007D37A0 /* ScriptingBridge.framework */; };
 		6E8F7F5A244973FE000FBC83 /* Constants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E8F7F58244973FE000FBC83 /* Constants.mm */; };
+		6E91D1042454CC5A00AA9875 /* musicbar.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6E6BF6FE24515C7800702DE0 /* musicbar.ttf */; };
 		6EB380802453988B00307E8C /* CustomMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3807F2453988B00307E8C /* CustomMutableURLRequest.m */; };
 		6EB3808324539BBF00307E8C /* NSString+GetMusicBarVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB3808224539BBF00307E8C /* NSString+GetMusicBarVersion.m */; };
 		6EB380892453AF6900307E8C /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB380882453AF6900307E8C /* ReactiveCocoa.framework */; };
@@ -71,6 +72,16 @@
 				6E6BF6B824502D4100702DE0 /* PrivateMediaRemote.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E91D1032454CC3A00AA9875 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				6E91D1042454CC5A00AA9875 /* musicbar.ttf in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -342,6 +353,7 @@
 				6E04236A2439F6AE00E113F4 /* Resources */,
 				6E3FB73224437B3600A343FE /* Embed Frameworks */,
 				6E3FB7572447DBC200A343FE /* Codesign */,
+				6E91D1032454CC3A00AA9875 /* CopyFiles */,
 			);
 			buildRules = (
 			);

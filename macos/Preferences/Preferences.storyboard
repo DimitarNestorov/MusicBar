@@ -176,7 +176,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="z1j-Xi-vTK" id="3bt-bE-dbq">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" size="13" name="musicbar"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="4NC-ER-e93">
                                                             <items>
                                                                 <menuItem title="None" state="on" id="z1j-Xi-vTK"/>
@@ -221,7 +221,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="None" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="QfW-nJ-ZMs" id="hlo-6Z-FL3">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" size="13" name="musicbar"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="bp1-VO-4YF">
                                                             <items>
                                                                 <menuItem title="None" state="on" id="QfW-nJ-ZMs"/>
