@@ -1,4 +1,15 @@
-# MusicBar
+![MusicBar](https://raw.githubusercontent.com/dimitarnestorov/MusicBar/gh-pages/github-title.png)
+
+<p align="center">
+iTunes and Spotify in your menu bar
+</p>
+<p align="center">
+<a href="https://github.com/dimitarnestorov/MusicBar/releases/latest/download/MusicBar.zip"><img src="https://raw.githubusercontent.com/dimitarnestorov/MusicBar/gh-pages/download.png" width="130" height="50"></a>
+<a href="https://join.slack.com/t/dimitarnestorov/shared_invite/zt-doeglpiu-M6hiX4aKxwD9o2tqLUwlTQ"><img alt="Slack" src="https://raw.githubusercontent.com/dimitarnestorov/MusicBar/gh-pages/slack.png" width="130" height="50"></a>
+</p>
+<p align="center">
+<img src="https://raw.githubusercontent.com/dimitarnestorov/MusicBar/gh-pages/showcase.gif" alt="Showcase" width="400">
+</p>
 
 ## Get MusicBar
 
