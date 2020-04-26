@@ -1,2 +1,15 @@
 {
+    "currentRelease": "0.1.0.1.0",
+    "releases": [
+        {
+            "version": "0.1.0.1.0",
+            "updateTo": {
+                "version": "0.1.0.1.0",
+                "pub_date": "2020-04-26T04:29:33+00:00",
+                "notes": "No notes",
+                "name": "0.1.0.1.0",
+                "url": "https://github.com/dimitarnestorov/MusicBar/releases/download/0.1.0/MusicBar.zip"
+            }
+        }
+    ]
 }
